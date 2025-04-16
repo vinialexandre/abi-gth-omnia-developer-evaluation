@@ -6,6 +6,9 @@
         <GeneratedMSBuildEditorConfigFile>$(IntermediateOutputPath)$(MSBuildProjectName).GeneratedMSBuildEditorConfig.editorconfig</GeneratedMSBuildEditorConfigFile>
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Ambev.DeveloperEvaluation.Unit.GeneratedMSBuildEditorConfig.editorconfig" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
@@ -35,14 +38,12 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\Ambev.DeveloperEvaluation.Domain\Ambev.DeveloperEvaluation.Domain.csproj" />
 		<ProjectReference Include="..\..\src\Ambev.DeveloperEvaluation.Application\Ambev.DeveloperEvaluation.Application.csproj" />
-		<ProjectReference Include="..\..\src\Ambev.DeveloperEvaluation.ORM\Ambev.DeveloperEvaluation.ORM.csproj" />
+		<ProjectReference Include="..\..\src\Ambev.DeveloperEvaluation.Infra\Ambev.DeveloperEvaluation.Infra.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Application\TestData\" />
-	  <Folder Include="Domain\Entities\TestData\" />
-	  <Folder Include="Domain\Specifications\TestData\" />
-	  <Folder Include="Domain\Validation\" />
+	  <Folder Include="Domain\Entities\" />
 	</ItemGroup>
 
 </Project>

@@ -6,6 +6,10 @@
 		<Nullable>enable</Nullable>
 		<GeneratedMSBuildEditorConfigFile>$(IntermediateOutputPath)$(MSBuildProjectName).GeneratedMSBuildEditorConfig.editorconfig</GeneratedMSBuildEditorConfigFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Ambev.DeveloperEvaluation.IoC.GeneratedMSBuildEditorConfig.editorconfig" />
+	</ItemGroup>
 	
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -18,7 +22,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Ambev.DeveloperEvaluation.Domain\Ambev.DeveloperEvaluation.Domain.csproj" />
 		<ProjectReference Include="..\Ambev.DeveloperEvaluation.Application\Ambev.DeveloperEvaluation.Application.csproj" />
-		<ProjectReference Include="..\Ambev.DeveloperEvaluation.ORM\Ambev.DeveloperEvaluation.ORM.csproj" />
+		<ProjectReference Include="..\Ambev.DeveloperEvaluation.Infra\Ambev.DeveloperEvaluation.Infra.csproj" />
 		<ProjectReference Include="..\Ambev.DeveloperEvaluation.Common\Ambev.DeveloperEvaluation.Common.csproj" />
 	</ItemGroup>
 

@@ -4,7 +4,7 @@ using Ambev.DeveloperEvaluation.Common.Logging;
 using Ambev.DeveloperEvaluation.Common.Security;
 using Ambev.DeveloperEvaluation.Common.Validation;
 using Ambev.DeveloperEvaluation.IoC;
-using Ambev.DeveloperEvaluation.ORM;
+using Ambev.DeveloperEvaluation.Infra;
 using Ambev.DeveloperEvaluation.WebApi.Middleware;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +18,6 @@ public class Program
     {
         try
         {
-            Log.Information("Starting web application");
-
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
             builder.AddDefaultLogging();
 
@@ -32,7 +30,7 @@ public class Program
             builder.Services.AddDbContext<DefaultContext>(options =>
                 options.UseNpgsql(
                     builder.Configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly("Ambev.DeveloperEvaluation.ORM")
+                    b => b.MigrationsAssembly("Ambev.DeveloperEvaluation.Infra")
                 )
             );
 
@@ -53,6 +51,7 @@ public class Program
             builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             var app = builder.Build();
+            app.UseMiddleware<DomainExceptionMiddleware>();
             app.UseMiddleware<ValidationExceptionMiddleware>();
 
             if (app.Environment.IsDevelopment())
@@ -69,6 +68,12 @@ public class Program
             app.UseBasicHealthChecks();
 
             app.MapControllers();
+
+            var loggerFactory = app.Services.GetRequiredService<ILoggerFactory>();
+            var logger = loggerFactory.CreateLogger("Migration");
+            MigrationInitializer.ApplyMigrations(app.Services, logger);
+
+            builder.WebHost.UseUrls("https://+:5000");
 
             app.Run();
         }

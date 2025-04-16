@@ -5,6 +5,9 @@
 		<Nullable>enable</Nullable>
         <GeneratedMSBuildEditorConfigFile>$(IntermediateOutputPath)$(MSBuildProjectName).GeneratedMSBuildEditorConfig.editorconfig</GeneratedMSBuildEditorConfigFile>
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Ambev.DeveloperEvaluation.Common.GeneratedMSBuildEditorConfig.editorconfig" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />

@@ -15,6 +15,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="appsettings.Docker.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Ambev.DeveloperEvaluation.WebApi.GeneratedMSBuildEditorConfig.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functional", "Functional", "{95501476-3BCD-48DA-A4E5-696A0B78A0BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ambev.DeveloperEvaluation.ORM", "src\Ambev.DeveloperEvaluation.ORM\Ambev.DeveloperEvaluation.ORM.csproj", "{B62C8404-A5FA-4D58-9398-1E3C55C28D14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ambev.DeveloperEvaluation.Infra", "src\Ambev.DeveloperEvaluation.Infra\Ambev.DeveloperEvaluation.Infra.csproj", "{B62C8404-A5FA-4D58-9398-1E3C55C28D14}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ambev.DeveloperEvaluation.Application", "src\Ambev.DeveloperEvaluation.Application\Ambev.DeveloperEvaluation.Application.csproj", "{80CED839-FE4A-4286-9403-252D230BA2A0}"
 EndProject
@@ -48,11 +48,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ambev.DeveloperEvaluation.WebApi", "src\Ambev.DeveloperEvaluation.WebApi\Ambev.DeveloperEvaluation.WebApi.csproj", "{2B484022-3EF7-4BAB-ADB8-849F9E419EDD}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4AF79501-F785-4B98-8EE5-54BE186D67A2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C361795D-30EF-4513-B313-8622BE1AD313}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,8 +12,7 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
         public string CustomerName { get; set; } = string.Empty;
         public Guid BranchId { get; set; }
         public string BranchName { get; set; } = string.Empty;
-
-        public List<SaleItem> Items { get; private set; } = new();
+        public ICollection<SaleItem> Items { get; set; } = new List<SaleItem>();
         public SaleStatus Status { get; private set; } = SaleStatus.Pending;
         public decimal TotalAmount => Items.Sum(i => i.Total);
 
@@ -40,6 +39,9 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
             if (!Items.Any())
                 throw new DomainException("A venda deve conter ao menos um item.");
 
+            foreach (var item in Items)
+                item.ApplyDiscount();
+
             Status = SaleStatus.Completed;
 
             DomainEvents.Add(new SaleCreatedEvent(Id, SaleDate, CustomerId, TotalAmount));
@@ -57,5 +59,12 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
         {
             DomainEvents.Clear();
         }
+
+        public void CalculateDiscounts()
+        {
+            foreach (var item in Items)
+                item.ApplyDiscount();
+        }
+
     }
 }

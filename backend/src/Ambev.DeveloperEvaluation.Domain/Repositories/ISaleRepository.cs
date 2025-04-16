@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ambev.DeveloperEvaluation.Domain.Entities;
+﻿using Ambev.DeveloperEvaluation.Domain.Entities;
 
 namespace Ambev.DeveloperEvaluation.Domain.Repositories
 {
@@ -16,6 +11,7 @@ namespace Ambev.DeveloperEvaluation.Domain.Repositories
         Task DeleteAsync(Guid id);
         Task<bool> ExistsAsync(Guid id);
         Task<IQueryable<Sale>> GetQueryableAsync();
+        IQueryable<Sale> Query();
 
     }
 }

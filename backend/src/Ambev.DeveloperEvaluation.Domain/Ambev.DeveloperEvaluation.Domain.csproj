@@ -10,6 +10,9 @@
     <EmbeddedResource Remove="ValueObjects\**" />
     <None Remove="ValueObjects\**" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Ambev.DeveloperEvaluation.Domain.GeneratedMSBuildEditorConfig.editorconfig" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Exceptions\" />

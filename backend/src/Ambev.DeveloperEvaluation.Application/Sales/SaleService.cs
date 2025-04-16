@@ -1,9 +1,8 @@
-﻿using System;
-using Ambev.DeveloperEvaluation.Domain.Entities;
+﻿using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
-using Ambev.DeveloperEvaluation.Domain.Services;
-using Ambev.DeveloperEvaluation.Domain.Validation;
-using Ambev.DeveloperEvaluation.WebApi.Common;
+using Ambev.DeveloperEvaluation.Application.Validation;
+using Ambev.DeveloperEvaluation.Application.Dtos;
+using Ambev.DeveloperEvaluation.Application.Services;
 
 namespace Ambev.DeveloperEvaluation.Application.Sales
 {
@@ -35,7 +34,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales
         public async Task<Sale> UpdateAsync(Sale sale)
         {
             ValidateSale(sale);
-            sale.Modify(sale.SaleNumber, sale.Items);
+            sale.Modify(sale.SaleNumber, sale.Items.ToList());
             await _repository.UpdateAsync(sale);
             PublishEvents(sale);
             return sale;
