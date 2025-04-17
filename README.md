@@ -1,119 +1,88 @@
-Segue um README mais **objetivo**, com explicação clara sobre o desafio, estrutura, padrões utilizados e execução via Docker:
-
----
-
 # Developer Evaluation - Sales API
 
-API RESTful desenvolvida para resolver o desafio técnico proposto, com foco em arquitetura limpa, boas práticas de design e testes unitários.
-
-📁 Repositório: [vinialexandre/abi-gth-omnia-developer-evaluation](https://github.com/vinialexandre/abi-gth-omnia-developer-evaluation)
+API construída para resolver o desafio técnico proposto em [`README_DESAFIO.md`](../README_DESAFIO.md), utilizando boas práticas como DDD, Clean Architecture, CQRS, e testes unitários.
 
 ---
 
-## 🔧 Como executar com Docker Compose
+## 🚀 Executando com Docker Compose
 
 Pré-requisitos:
-- Docker e Docker Compose instalados
+- Docker + Docker Compose instalados
 
-### Comando:
-```bash
+```
 docker compose up --build
 ```
 
-Isso irá:
-- Subir o container da API (`Abi.DeveloperEvaluation.WebApi`)
-- Subir o container PostgreSQL
-- Aplicar migrations automaticamente
-
-### Acessos:
-- Swagger: https://localhost:5000/swagger
-- API: https://localhost:5000
-- PostgreSQL: `Host=db;Port=5432;Database=developer-evaluation;Username=postgres;Password=postgres`
+Esse comando irá:
+- Subir a API em https://localhost:5000
+- Subir o PostgreSQL com migrations aplicadas
+- Expor o Swagger em https://localhost:5000/swagger
 
 ---
 
-## 🧠 Desafio
-
-Criar uma API para registrar vendas com:
-- Itens, quantidades, descontos
-- Cliente e filial
-- Cancelamento de venda
-- Paginação
-- Regras de negócio aplicadas por item:
-  - 4+ itens: 10% de desconto
-  - 10-20 itens: 20% de desconto
-  - >20 itens: proibido
+## 📊 Relatório de cobertura disponível em:
+`backend/src/Abi.DeveloperEvaluation.Unit/TestResults/CoverageReport/index.html`
 
 ---
 
-## 📐 Arquitetura & Padrões
+## 🧠 Sobre o Desafio
+
+O desafio consiste em criar uma API para registro de vendas com:
+- CRUD completo
+- Aplicação de regras de negócio por item
+- Suporte a cancelamento de venda
+- Estrutura com separação em camadas e foco em escalabilidade
+
+> Regras implementadas detalhadas em [`README_DESAFIO.md`](../README_DESAFIO.md)
+
+---
+
+## 🧱 Estrutura e Patterns
 
 ### Domain
-- **Entity**, **Value Object**
-- **Domain Events** (ex: `SaleCreatedEvent`, `SaleCancelledEvent`)
-- Lógica de negócio encapsulada na entidade `Sale`
+- Entity (`Sale`, `SaleItem`)
+- Value Object
+- Domain Events (estrutura pronta)
 
 ### Application
-- **CQRS** com MediatR
-- **Handlers** para comandos e queries
-- **FluentValidation** para validações
+- CQRS com MediatR
+- DTOs, Commands, Queries, Handlers
+- Validations com FluentValidation
 
 ### Infra
-- **Repository Pattern**
-- EF Core com PostgreSQL
+- Repository Pattern
+- EF Core + PostgreSQL
 
 ### WebApi
-- **Controllers** (como `SaleController`)
-- **Middlewares**:
-  - `DomainExceptionMiddleware`
-  - `ValidationExceptionMiddleware`
-
-### Common
-- HealthChecks
-- Logging
-- Response padrão (via `ApiResponse`)
+- Controllers REST
+- Middlewares de erro (`DomainException`, `ValidationException`)
+- HealthCheck customizado
 
 ### IoC
-- **Service Registration**
-- Isolamento da injeção de dependências
+- Injeção de dependência isolada
 
 ---
 
-## ✍️ Convenções e Nomeclaturas
+## 📐 Nomeclaturas e Organização
 
-| Tipo          | Sufixo     | Exemplo                        |
-|---------------|------------|--------------------------------|
-| Command       | `Command`  | `CreateSaleCommand`            |
-| Query         | `Query`    | `GetSaleByIdQuery`             |
-| Handler       | `Handler`  | `CreateSaleCommandHandler`     |
-| DTO           | `Request`, `Response` | `SaleRequest`, `SaleResponse` |
-| Middleware    | `Middleware` | `ValidationExceptionMiddleware` |
-
----
-
-## 🧪 Testes
-
-✅ Priorizados **testes unitários**, devido ao tempo limitado.
-
-- Testes para `Application` (handlers, validações)
-- Testes para `Common` (healthcheck, responses)
-
-🔜 Testes de integração e controllers podem ser adicionados facilmente.
+| Tipo         | Sufixo         | Exemplo                         |
+|--------------|----------------|----------------------------------|
+| Commands     | `Command`      | `CreateSaleCommand`              |
+| Queries      | `Query`        | `GetSaleByIdQuery`               |
+| Handlers     | `Handler`      | `GetAllSalesHandler`             |
+| DTOs         | `Request/Response` | `SaleRequest`, `SaleResponse` |
+| Middlewares  | `Middleware`   | `ValidationExceptionMiddleware`  |
 
 ---
 
-## ✅ Conclusão
+## ✅ Testes
 
-Esse projeto demonstra:
-- Arquitetura DDD limpa
-- Separação clara de responsabilidades
-- Validações robustas com cobertura de testes
-- API estruturada e documentada
+✔️ Foram priorizados testes **unitários** devido ao curto prazo:
+- Alta cobertura em `Application` (Handlers, Validações)
+- Testes em `Common` (HealthCheck, Responses)
 
-📁 Estrutura preparada para escalar, integrar eventos e publicar em brokers no futuro.
+🔜 Testes de integração não implementados, mas estrutura preparada.
 
 ---
 
-> Desenvolvido por [Vinicius Oliveira](https://github.com/vinialexandre) • `backend/` contém o projeto principal
-
-Se quiser, posso já salvar esse novo conteúdo no `README.md`. Deseja?
+> Desenvolvido por [Vinicius Oliveira](https://github.com/vinialexandre)
