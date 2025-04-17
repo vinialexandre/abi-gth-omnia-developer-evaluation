@@ -1,6 +1,6 @@
 # Developer Evaluation - Sales API
 
-API construída para resolver o desafio técnico proposto em [`README_DESAFIO.md`](../README_DESAFIO.md), utilizando boas práticas como DDD, Clean Architecture, CQRS, e testes unitários.
+API construída para resolver o desafio técnico proposto em [`README_DESAFIO.md`](https://github.com/vinialexandre/abi-gth-omnia-developer-evaluation/blob/main/README_DESAFIO.md), utilizando boas práticas como DDD, Clean Architecture, CQRS, e testes unitários.
 
 ---
 
