@@ -11,7 +11,10 @@ using Abi.DeveloperEvaluation.Application.Dtos;
 using Abi.DeveloperEvaluation.Domain.Repositories;
 using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Unit.Utils;
+using Microsoft.Extensions.Logging;
+
 namespace Abi.DeveloperEvaluation.Unit.Handlers;
+
 public class GetPaginatedSalesHandlerTests
 {
     [Fact]
@@ -20,7 +23,7 @@ public class GetPaginatedSalesHandlerTests
         var options = new DbContextOptionsBuilder<FakeContext>()
             .UseInMemoryDatabase(databaseName: "SalesDb")
             .Options;
-        
+
         using var context = new FakeContext(options);
         var sale = new Sale { Id = Guid.NewGuid() };
         context.Sales.Add(sale);
@@ -33,7 +36,9 @@ public class GetPaginatedSalesHandlerTests
         mockMapper.Setup(m => m.Map<List<SaleResponse>>(It.IsAny<List<Sale>>()))
                   .Returns(new List<SaleResponse> { new SaleResponse() });
 
-        var handler = new GetPaginatedSalesHandler(mockRepo.Object, mockMapper.Object);
+        var mockLogger = new Mock<ILogger<GetPaginatedSalesHandler>>();
+
+        var handler = new GetPaginatedSalesHandler(mockRepo.Object, mockMapper.Object, mockLogger.Object);
         var query = new GetPaginatedSalesQuery(1, 10);
 
         var result = await handler.Handle(query, CancellationToken.None);

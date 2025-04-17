@@ -12,6 +12,7 @@ using Abi.DeveloperEvaluation.Application.Dtos;
 using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Domain.Repositories;
 using Abi.DeveloperEvaluation.Unit.Utils;
+using Microsoft.Extensions.Logging;
 
 namespace Abi.DeveloperEvaluation.Unit.Handlers;
 
@@ -43,7 +44,9 @@ public class GetAllSalesHandlerTests
         var mapperMock = new Mock<IMapper>();
         mapperMock.Setup(m => m.Map<IEnumerable<SaleResponse>>(sales)).Returns(saleResponses);
 
-        var handler = new GetAllSalesHandler(repoMock.Object, mapperMock.Object);
+        var loggerMock = new Mock<ILogger<GetAllSalesHandler>>();
+
+        var handler = new GetAllSalesHandler(repoMock.Object, mapperMock.Object, loggerMock.Object);
 
         var result = await handler.Handle(new GetAllSalesQuery(), CancellationToken.None);
 

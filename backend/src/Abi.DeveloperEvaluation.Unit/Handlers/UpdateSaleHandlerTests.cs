@@ -6,6 +6,7 @@ using Abi.DeveloperEvaluation.Application.Dtos;
 using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Domain.Enums;
 using Abi.DeveloperEvaluation.Domain.Repositories;
+using Microsoft.Extensions.Logging;
 
 namespace Abi.DeveloperEvaluation.Unit.Handlers;
 
@@ -13,14 +14,14 @@ public class UpdateSaleHandlerTests
 {
     private readonly Mock<ISaleRepository> _repoMock = new();
     private readonly Mock<IMapper> _mapperMock = new();
+    private readonly Mock<ILogger<UpdateSaleHandler>> _loggerMock = new();
 
     private UpdateSaleHandler BuildHandler() =>
-        new(_repoMock.Object, _mapperMock.Object);
+        new(_repoMock.Object, _mapperMock.Object, _loggerMock.Object);
 
     [Fact]
     public async Task Handle_ValidUpdate_ShouldModifyAndReturnUpdatedSale()
     {
-        // Arrange
         var saleId = Guid.NewGuid();
 
         var existingSale = new Sale
@@ -65,10 +66,8 @@ public class UpdateSaleHandlerTests
 
         var command = new UpdateSaleCommand(saleId, saleRequest);
 
-        // Act
         var result = await handler.Handle(command, CancellationToken.None);
 
-        // Assert
         _repoMock.Verify(r => r.RemoveAllItems(existingSale), Times.Once);
         _repoMock.Verify(r => r.UpdateAsync(existingSale), Times.Once);
         _repoMock.Verify(r => r.SaveChangesAsync(), Times.Once);

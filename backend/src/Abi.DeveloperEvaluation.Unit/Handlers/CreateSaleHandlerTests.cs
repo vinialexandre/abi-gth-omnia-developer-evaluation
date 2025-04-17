@@ -5,21 +5,23 @@ using Abi.DeveloperEvaluation.Application.Sales.Commands;
 using Abi.DeveloperEvaluation.Application.Dtos;
 using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Domain.Repositories;
+using Microsoft.Extensions.Logging;
 
 namespace Abi.DeveloperEvaluation.Unit.Handlers;
+
 public class CreateSaleHandlerTests
 {
     private readonly Mock<ISaleRepository> _repoMock = new();
     private readonly Mock<IUnitOfWork> _uowMock = new();
     private readonly Mock<IMapper> _mapperMock = new();
+    private readonly Mock<ILogger<CreateSaleHandler>> _loggerMock = new();
 
     private CreateSaleHandler BuildHandler() =>
-        new(_repoMock.Object, _uowMock.Object, _mapperMock.Object);
+        new(_repoMock.Object, _uowMock.Object, _mapperMock.Object, _loggerMock.Object);
 
     [Fact]
     public async Task Handle_ValidCommand_ShouldAddSaleAndCommit()
     {
-        // Arrange
         var saleRequest = new SaleRequest
         {
             SaleNumber = "S001",
@@ -73,10 +75,8 @@ public class CreateSaleHandlerTests
 
         var handler = BuildHandler();
 
-        // Act
         var result = await handler.Handle(new CreateSaleCommand(saleRequest), CancellationToken.None);
 
-        // Assert
         _repoMock.Verify(r => r.AddAsync(It.IsAny<Sale>()), Times.Once);
         _uowMock.Verify(u => u.CommitAsync(), Times.Once);
         Assert.Equal("S001", result.SaleNumber);

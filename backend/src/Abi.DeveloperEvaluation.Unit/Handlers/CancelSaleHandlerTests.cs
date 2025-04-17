@@ -8,19 +8,20 @@ using Abi.DeveloperEvaluation.Application.Sales.Commands;
 using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Domain.Repositories;
 using Abi.DeveloperEvaluation.Domain.Enums;
+using Microsoft.Extensions.Logging;
 
 namespace Abi.DeveloperEvaluation.Unit.Handlers;
 
 public class CancelSaleHandlerTests
 {
     private readonly Mock<ISaleRepository> _repoMock = new();
+    private readonly Mock<ILogger<CancelSaleHandler>> _loggerMock = new();
 
-    private CancelSaleHandler BuildHandler() => new(_repoMock.Object);
+    private CancelSaleHandler BuildHandler() => new(_repoMock.Object, _loggerMock.Object);
 
     [Fact]
     public async Task Handle_ValidCancel_ShouldUpdateAndCommit()
     {
-        // Arrange
         var sale = new Sale
         {
             Id = Guid.NewGuid(),
@@ -32,10 +33,8 @@ public class CancelSaleHandlerTests
         var command = new CancelSaleCommand(sale.Id, "Cliente desistiu");
         var handler = BuildHandler();
 
-        // Act
         var result = await handler.Handle(command, CancellationToken.None);
 
-        // Assert
         _repoMock.Verify(r => r.UpdateAsync(sale), Times.Once);
         _repoMock.Verify(r => r.SaveChangesAsync(), Times.Once);
         Assert.Equal(SaleStatus.Cancelled, sale.Status);

@@ -75,6 +75,8 @@ public class Program
 
             builder.WebHost.UseUrls("https://+:5000");
 
+            app.UseDefaultLogging();
+
             app.Run();
         }
         catch (Exception ex)

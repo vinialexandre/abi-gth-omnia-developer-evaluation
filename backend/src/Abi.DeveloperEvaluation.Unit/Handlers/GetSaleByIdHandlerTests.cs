@@ -11,8 +11,10 @@ using Abi.DeveloperEvaluation.Domain.Repositories;
 using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Application.Dtos;
 using Abi.DeveloperEvaluation.Unit.Utils;
+using Microsoft.Extensions.Logging;
 
 namespace Abi.DeveloperEvaluation.Unit.Handlers;
+
 public class GetSaleByIdHandlerTests
 {
     [Fact]
@@ -36,7 +38,9 @@ public class GetSaleByIdHandlerTests
         mockMapper.Setup(m => m.Map<SaleResponse>(It.IsAny<Sale>()))
                   .Returns(new SaleResponse { Id = sale.Id });
 
-        var handler = new GetSaleByIdHandler(mockRepo.Object, mockMapper.Object);
+        var mockLogger = new Mock<ILogger<GetSaleByIdHandler>>();
+
+        var handler = new GetSaleByIdHandler(mockRepo.Object, mockMapper.Object, mockLogger.Object);
 
         var result = await handler.Handle(new GetSaleByIdQuery(saleId), CancellationToken.None);
 
