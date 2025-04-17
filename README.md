@@ -21,7 +21,7 @@ Esse comando irá:
 ---
 
 📊 Veja o relatório de cobertura de testes completo:  
-<a href="https://vinialexandre.github.io/abi-gth-omnia-developer-evaluation" target="_blank">🔗 Acessar testes</a>
+👉 [Clique aqui](https://vinialexandre.github.io/abi-gth-omnia-developer-evaluation)
 
 ---
 
