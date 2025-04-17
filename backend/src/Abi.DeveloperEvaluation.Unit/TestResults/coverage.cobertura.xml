@@ -1,0 +1,2716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.8212999999999999" branch-rate="0.7625" version="1.9" timestamp="1744861399" lines-covered="492" lines-valid="599" branches-covered="61" branches-valid="80">
+  <sources>
+    <source>C:\Users\vinio\OneDrive\Documentos\teste-abi\backend\src\</source>
+  </sources>
+  <packages>
+    <package name="Abi.DeveloperEvaluation.Application" line-rate="0.9279000000000001" branch-rate="0.9444" complexity="91">
+      <classes>
+        <class name="ApiResponse" filename="Abi.DeveloperEvaluation.Application\Dtos\ApiResponse.cs" line-rate="1" branch-rate="1" complexity="7">
+          <methods>
+            <method name="get_Success" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="17" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Message" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="26" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Errors" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Data" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="Ok" signature="(System.String,System.Object)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="Fail" signature="(System.String,System.Collections.Generic.IEnumerable`1&lt;Abi.DeveloperEvaluation.Common.Validation.ValidationErrorDetail&gt;)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="19" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="22" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="17" branch="False" />
+            <line number="7" hits="26" branch="False" />
+            <line number="10" hits="6" branch="False" />
+            <line number="13" hits="3" branch="False" />
+            <line number="16" hits="2" branch="False" />
+            <line number="19" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="22" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Mappings.Mappings.SaleProfile" filename="Abi.DeveloperEvaluation.Application\Sales\Mappings\SaleProfile.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
+                <line number="12" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.SaleService" filename="Abi.DeveloperEvaluation.Application\Sales\SaleService.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="ValidateSale" signature="(Abi.DeveloperEvaluation.Domain.Entities.Sale)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="57" hits="2" branch="False" />
+                <line number="59" hits="8" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="51" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="60" hits="2" branch="False" />
+                <line number="61" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="PublishEvents" signature="(Abi.DeveloperEvaluation.Domain.Entities.Sale)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="65" hits="12" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="60" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="66" hits="3" branch="False" />
+                <line number="68" hits="3" branch="False" />
+                <line number="69" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Abi.DeveloperEvaluation.Domain.Repositories.ISaleRepository,Abi.DeveloperEvaluation.Domain.DomainValidation.IValidator`1&lt;Abi.DeveloperEvaluation.Domain.Entities.Sale&gt;,Abi.DeveloperEvaluation.Domain.DomainValidation.IValidator`1&lt;Abi.DeveloperEvaluation.Domain.Entities.SaleItem&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="4" branch="False" />
+                <line number="16" hits="4" branch="False" />
+                <line number="17" hits="4" branch="False" />
+                <line number="18" hits="4" branch="False" />
+                <line number="20" hits="4" branch="False" />
+                <line number="21" hits="4" branch="False" />
+                <line number="22" hits="4" branch="False" />
+                <line number="23" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="57" hits="2" branch="False" />
+            <line number="59" hits="8" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="51" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="60" hits="2" branch="False" />
+            <line number="61" hits="2" branch="False" />
+            <line number="65" hits="12" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="60" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="66" hits="3" branch="False" />
+            <line number="68" hits="3" branch="False" />
+            <line number="69" hits="3" branch="False" />
+            <line number="15" hits="4" branch="False" />
+            <line number="16" hits="4" branch="False" />
+            <line number="17" hits="4" branch="False" />
+            <line number="18" hits="4" branch="False" />
+            <line number="20" hits="4" branch="False" />
+            <line number="21" hits="4" branch="False" />
+            <line number="22" hits="4" branch="False" />
+            <line number="23" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.SaleService/&lt;CancelAsync&gt;d__6" filename="Abi.DeveloperEvaluation.Application\Sales\SaleService.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="45" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="130" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="46" hits="2" branch="False" />
+                <line number="48" hits="1" branch="False" />
+                <line number="50" hits="1" branch="False" />
+                <line number="52" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="45" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="130" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="46" hits="2" branch="False" />
+            <line number="48" hits="1" branch="False" />
+            <line number="50" hits="1" branch="False" />
+            <line number="52" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.SaleService/&lt;CreateAsync&gt;d__4" filename="Abi.DeveloperEvaluation.Application\Sales\SaleService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.SaleService/&lt;GetAllAsync&gt;d__10" filename="Abi.DeveloperEvaluation.Application\Sales\SaleService.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="78" hits="0" branch="False" />
+                <line number="79" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="78" hits="0" branch="False" />
+            <line number="79" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.SaleService/&lt;GetByIdAsync&gt;d__9" filename="Abi.DeveloperEvaluation.Application\Sales\SaleService.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="73" hits="0" branch="False" />
+                <line number="74" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="73" hits="0" branch="False" />
+            <line number="74" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.SaleService/&lt;GetPaginatedAsync&gt;d__11" filename="Abi.DeveloperEvaluation.Application\Sales\SaleService.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="83" hits="0" branch="False" />
+                <line number="84" hits="0" branch="False" />
+                <line number="85" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="83" hits="0" branch="False" />
+            <line number="84" hits="0" branch="False" />
+            <line number="85" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.SaleService/&lt;UpdateAsync&gt;d__5" filename="Abi.DeveloperEvaluation.Application\Sales\SaleService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+                <line number="38" hits="1" branch="False" />
+                <line number="39" hits="1" branch="False" />
+                <line number="40" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="39" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Validators.CancelSaleValidator" filename="Abi.DeveloperEvaluation.Application\Sales\Validators\CancelSaleValidator.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="7" branch="False" />
+                <line number="10" hits="7" branch="False" />
+                <line number="11" hits="7" branch="False" />
+                <line number="13" hits="7" branch="False" />
+                <line number="14" hits="7" branch="False" />
+                <line number="15" hits="7" branch="False" />
+                <line number="16" hits="7" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="7" branch="False" />
+            <line number="10" hits="7" branch="False" />
+            <line number="11" hits="7" branch="False" />
+            <line number="13" hits="7" branch="False" />
+            <line number="14" hits="7" branch="False" />
+            <line number="15" hits="7" branch="False" />
+            <line number="16" hits="7" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Validators.CreateSaleValidator" filename="Abi.DeveloperEvaluation.Application\Sales\Validators\CreateSaleValidator.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="4" branch="False" />
+                <line number="9" hits="4" branch="False" />
+                <line number="10" hits="4" branch="False" />
+                <line number="11" hits="4" branch="False" />
+                <line number="12" hits="4" branch="False" />
+                <line number="13" hits="8" branch="False" />
+                <line number="14" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="4" branch="False" />
+            <line number="9" hits="4" branch="False" />
+            <line number="10" hits="4" branch="False" />
+            <line number="11" hits="4" branch="False" />
+            <line number="12" hits="4" branch="False" />
+            <line number="13" hits="8" branch="False" />
+            <line number="14" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Validators.UpdateSaleValidator" filename="Abi.DeveloperEvaluation.Application\Sales\Validators\UpdateSaleValidator.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="5" branch="False" />
+                <line number="10" hits="5" branch="False" />
+                <line number="11" hits="5" branch="False" />
+                <line number="13" hits="5" branch="False" />
+                <line number="14" hits="5" branch="False" />
+                <line number="16" hits="5" branch="False" />
+                <line number="17" hits="5" branch="False" />
+                <line number="19" hits="5" branch="False" />
+                <line number="20" hits="5" branch="False" />
+                <line number="22" hits="5" branch="False" />
+                <line number="23" hits="5" branch="False" />
+                <line number="24" hits="5" branch="False" />
+                <line number="25" hits="5" branch="False" />
+                <line number="26" hits="5" branch="False" />
+                <line number="27" hits="5" branch="False" />
+                <line number="28" hits="5" branch="False" />
+                <line number="29" hits="5" branch="False" />
+                <line number="30" hits="5" branch="False" />
+                <line number="31" hits="5" branch="False" />
+                <line number="32" hits="5" branch="False" />
+                <line number="33" hits="10" branch="False" />
+                <line number="34" hits="5" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="5" branch="False" />
+            <line number="10" hits="5" branch="False" />
+            <line number="11" hits="5" branch="False" />
+            <line number="13" hits="5" branch="False" />
+            <line number="14" hits="5" branch="False" />
+            <line number="16" hits="5" branch="False" />
+            <line number="17" hits="5" branch="False" />
+            <line number="19" hits="5" branch="False" />
+            <line number="20" hits="5" branch="False" />
+            <line number="22" hits="5" branch="False" />
+            <line number="23" hits="5" branch="False" />
+            <line number="24" hits="5" branch="False" />
+            <line number="25" hits="5" branch="False" />
+            <line number="26" hits="5" branch="False" />
+            <line number="27" hits="5" branch="False" />
+            <line number="28" hits="5" branch="False" />
+            <line number="29" hits="5" branch="False" />
+            <line number="30" hits="5" branch="False" />
+            <line number="31" hits="5" branch="False" />
+            <line number="32" hits="5" branch="False" />
+            <line number="33" hits="10" branch="False" />
+            <line number="34" hits="5" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Queries.GetAllSalesQuery" filename="Abi.DeveloperEvaluation.Application\Sales\Queries\GetAllSalesQuery.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Queries.GetPaginatedSalesQuery" filename="Abi.DeveloperEvaluation.Application\Sales\Queries\GetPaginatedSalesQuery.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Page" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Queries.GetSaleByIdQuery" filename="Abi.DeveloperEvaluation.Application\Sales\Queries\GetSaleByIdQuery.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.CancelSaleHandler" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\CancelSaleHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Abi.DeveloperEvaluation.Domain.Repositories.ISaleRepository)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="2" branch="False" />
+                <line number="13" hits="2" branch="False" />
+                <line number="14" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="2" branch="False" />
+            <line number="13" hits="2" branch="False" />
+            <line number="14" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.CancelSaleHandler/&lt;Handle&gt;d__2" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\CancelSaleHandler.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="18" hits="2" branch="False" />
+                <line number="19" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="144" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="2" branch="False" />
+            <line number="19" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="144" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="20" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.CreateSaleHandler" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\CreateSaleHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Abi.DeveloperEvaluation.Domain.Repositories.ISaleRepository,Abi.DeveloperEvaluation.Domain.Repositories.IUnitOfWork,AutoMapper.IMapper)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="20" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.CreateSaleHandler/&lt;Handle&gt;d__4" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\CreateSaleHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+                <line number="33" hits="1" branch="False" />
+                <line number="34" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="29" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="33" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.GetAllSalesHandler" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\GetAllSalesHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Abi.DeveloperEvaluation.Domain.Repositories.ISaleRepository,AutoMapper.IMapper)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.GetAllSalesHandler/&lt;Handle&gt;d__3" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\GetAllSalesHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.GetPaginatedSalesHandler" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\GetPaginatedSalesHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Abi.DeveloperEvaluation.Domain.Repositories.ISaleRepository,AutoMapper.IMapper)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.GetPaginatedSalesHandler/&lt;Handle&gt;d__3" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\GetPaginatedSalesHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.GetSaleByIdHandler" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\GetSaleByIdHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Abi.DeveloperEvaluation.Domain.Repositories.ISaleRepository,AutoMapper.IMapper)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.GetSaleByIdHandler/&lt;Handle&gt;d__3" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\GetSaleByIdHandler.cs" line-rate="1" branch-rate="0.5" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="27" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="346" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="28" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="27" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="346" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="28" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.UpdateSaleHandler" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\UpdateSaleHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Abi.DeveloperEvaluation.Domain.Repositories.ISaleRepository,AutoMapper.IMapper)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="3" branch="False" />
+                <line number="18" hits="3" branch="False" />
+                <line number="19" hits="3" branch="False" />
+                <line number="20" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="3" branch="False" />
+            <line number="18" hits="3" branch="False" />
+            <line number="19" hits="3" branch="False" />
+            <line number="20" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Handlers.UpdateSaleHandler/&lt;Handle&gt;d__3" filename="Abi.DeveloperEvaluation.Application\Sales\Handlers\UpdateSaleHandler.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="24" hits="3" branch="False" />
+                <line number="25" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="158" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="26" hits="1" branch="False" />
+                <line number="28" hits="2" branch="False" />
+                <line number="30" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="223" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="31" hits="1" branch="False" />
+                <line number="33" hits="1" branch="False" />
+                <line number="35" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+                <line number="38" hits="1" branch="False" />
+                <line number="40" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="3" branch="False" />
+            <line number="25" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="158" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="26" hits="1" branch="False" />
+            <line number="28" hits="2" branch="False" />
+            <line number="30" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="223" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="31" hits="1" branch="False" />
+            <line number="33" hits="1" branch="False" />
+            <line number="35" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Commands.CancelSaleCommand" filename="Abi.DeveloperEvaluation.Application\Sales\Commands\CancelSaleCommand.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_SaleId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="26" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="26" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Commands.CreateSaleCommand" filename="Abi.DeveloperEvaluation.Application\Sales\Commands\CreateSaleCommand.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Request" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="14" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="14" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Sales.Commands.UpdateSaleCommand" filename="Abi.DeveloperEvaluation.Application\Sales\Commands\UpdateSaleCommand.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="11" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="11" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.ApiResponseWithData`1" filename="Abi.DeveloperEvaluation.Application\Dtos\ApiResponseWithData.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="get_Data" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="Ok" signature="(T,System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="Fail" signature="(System.String,System.Collections.Generic.IEnumerable`1&lt;Abi.DeveloperEvaluation.Common.Validation.ValidationErrorDetail&gt;)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="16" hits="1" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="22" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="5" branch="False" />
+            <line number="11" hits="2" branch="False" />
+            <line number="16" hits="1" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="22" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.CancelSaleRequest" filename="Abi.DeveloperEvaluation.Application\Dtos\CancelSaleRequest.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Reason" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.PaginatedList`1" filename="Abi.DeveloperEvaluation.Application\Dtos\PaginatedList.cs" line-rate="1" branch-rate="1" complexity="8">
+          <methods>
+            <method name="get_CurrentPage" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="8" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TotalPages" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_PageSize" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TotalCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="get_HasPrevious" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_HasNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="WithNewItems" signature="(System.Collections.Generic.List`1&lt;TOut&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="34" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Collections.Generic.List`1&lt;T&gt;,System.Int32,System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="5" branch="False" />
+                <line number="17" hits="5" branch="False" />
+                <line number="18" hits="5" branch="False" />
+                <line number="19" hits="5" branch="False" />
+                <line number="20" hits="5" branch="False" />
+                <line number="22" hits="5" branch="False" />
+                <line number="23" hits="5" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="8" branch="False" />
+            <line number="8" hits="3" branch="False" />
+            <line number="9" hits="5" branch="False" />
+            <line number="10" hits="5" branch="False" />
+            <line number="12" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="34" hits="2" branch="False" />
+            <line number="15" hits="5" branch="False" />
+            <line number="17" hits="5" branch="False" />
+            <line number="18" hits="5" branch="False" />
+            <line number="19" hits="5" branch="False" />
+            <line number="20" hits="5" branch="False" />
+            <line number="22" hits="5" branch="False" />
+            <line number="23" hits="5" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.PaginatedList`1/&lt;CreateAsync&gt;d__17" filename="Abi.DeveloperEvaluation.Application\Dtos\PaginatedList.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.PaginatedResponse`1" filename="Abi.DeveloperEvaluation.Application\Dtos\PaginatedResponse.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="get_Sales" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CurrentPage" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TotalPages" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TotalCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="Ok" signature="(System.Collections.Generic.List`1&lt;T&gt;,System.Int32,System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="2" branch="False" />
+                <line number="13" hits="2" branch="False" />
+                <line number="14" hits="2" branch="False" />
+                <line number="15" hits="2" branch="False" />
+                <line number="16" hits="2" branch="False" />
+                <line number="17" hits="2" branch="False" />
+                <line number="18" hits="2" branch="False" />
+                <line number="19" hits="2" branch="False" />
+                <line number="20" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="6" branch="False" />
+            <line number="6" hits="3" branch="False" />
+            <line number="7" hits="3" branch="False" />
+            <line number="8" hits="3" branch="False" />
+            <line number="12" hits="2" branch="False" />
+            <line number="13" hits="2" branch="False" />
+            <line number="14" hits="2" branch="False" />
+            <line number="15" hits="2" branch="False" />
+            <line number="16" hits="2" branch="False" />
+            <line number="17" hits="2" branch="False" />
+            <line number="18" hits="2" branch="False" />
+            <line number="19" hits="2" branch="False" />
+            <line number="20" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.SaleItemRequest" filename="Abi.DeveloperEvaluation.Application\Dtos\SaleItemRequest.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="get_ProductId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="4" hits="15" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ProductName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="17" branch="False" />
+              </lines>
+            </method>
+            <method name="get_UnitPrice" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="13" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Quantity" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="21" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="15" branch="False" />
+            <line number="5" hits="17" branch="False" />
+            <line number="6" hits="13" branch="False" />
+            <line number="7" hits="21" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.SaleItemResponse" filename="Abi.DeveloperEvaluation.Application\Dtos\SaleItemResponse.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="get_ProductId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="4" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ProductName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_UnitPrice" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Quantity" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Discount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Total" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="2" branch="False" />
+            <line number="5" hits="3" branch="False" />
+            <line number="6" hits="4" branch="False" />
+            <line number="7" hits="4" branch="False" />
+            <line number="8" hits="3" branch="False" />
+            <line number="9" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.SaleRequest" filename="Abi.DeveloperEvaluation.Application\Dtos\SaleRequest.cs" line-rate="1" branch-rate="1" complexity="8">
+          <methods>
+            <method name="get_SaleNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="4" hits="32" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaleDate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="11" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CustomerId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="14" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CustomerName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="29" branch="False" />
+              </lines>
+            </method>
+            <method name="get_BranchId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="get_BranchName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="19" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Status" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Items" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="49" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="32" branch="False" />
+            <line number="5" hits="11" branch="False" />
+            <line number="6" hits="14" branch="False" />
+            <line number="7" hits="29" branch="False" />
+            <line number="8" hits="5" branch="False" />
+            <line number="9" hits="19" branch="False" />
+            <line number="10" hits="6" branch="False" />
+            <line number="11" hits="49" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Application.Dtos.SaleResponse" filename="Abi.DeveloperEvaluation.Application\Dtos\SaleResponse.cs" line-rate="1" branch-rate="1" complexity="8">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="4" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaleNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="16" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaleDate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CustomerName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="12" branch="False" />
+              </lines>
+            </method>
+            <method name="get_BranchName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="12" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TotalAmount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Status" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Items" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="12" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="7" branch="False" />
+            <line number="5" hits="16" branch="False" />
+            <line number="6" hits="2" branch="False" />
+            <line number="7" hits="12" branch="False" />
+            <line number="8" hits="12" branch="False" />
+            <line number="9" hits="4" branch="False" />
+            <line number="10" hits="4" branch="False" />
+            <line number="11" hits="12" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Abi.DeveloperEvaluation.Common" line-rate="0.625" branch-rate="0.5" complexity="46">
+      <classes>
+        <class name="Abi.DeveloperEvaluation.Common.Validation.ValidationBehavior`2" filename="Abi.DeveloperEvaluation.Common\Validation\ValidationBehavior.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Collections.Generic.IEnumerable`1&lt;FluentValidation.IValidator`1&lt;TRequest&gt;&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="2" branch="False" />
+                <line number="13" hits="2" branch="False" />
+                <line number="14" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="2" branch="False" />
+            <line number="13" hits="2" branch="False" />
+            <line number="14" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Validation.ValidationBehavior`2/&lt;&gt;c" filename="Abi.DeveloperEvaluation.Common\Validation\ValidationBehavior.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="&lt;Handle&gt;b__2_0" signature="(FluentValidation.Results.ValidationResult)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="&lt;Handle&gt;b__2_1" signature="(FluentValidation.Results.ValidationFailure)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="27" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="26" hits="2" branch="False" />
+            <line number="27" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Validation.ValidationBehavior`2/&lt;&gt;c__DisplayClass2_0" filename="Abi.DeveloperEvaluation.Common\Validation\ValidationBehavior.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="&lt;Handle&gt;b__2" signature="(FluentValidation.IValidator`1&lt;TRequest&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Validation.ValidationBehavior`2/&lt;Handle&gt;d__2" filename="Abi.DeveloperEvaluation.Common\Validation\ValidationBehavior.cs" line-rate="1" branch-rate="1" complexity="8">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="8">
+              <lines>
+                <line number="18" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="56" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="2" branch="False" />
+                <line number="22" hits="2" branch="False" />
+                <line number="25" hits="2" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="200" type="jump" coverage="100%" />
+                    <condition number="236" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="28" hits="2" branch="False" />
+                <line number="30" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="280" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="32" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="56" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="20" hits="2" branch="False" />
+            <line number="22" hits="2" branch="False" />
+            <line number="25" hits="2" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="200" type="jump" coverage="100%" />
+                <condition number="236" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="28" hits="2" branch="False" />
+            <line number="30" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="280" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="32" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Validation.ValidationErrorDetail" filename="Abi.DeveloperEvaluation.Common\Validation\ValidationErrorDetail.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="get_Error" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="14" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Detail" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="14" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Explicit" signature="(FluentValidation.Results.ValidationFailure)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="5" branch="False" />
+                <line number="13" hits="5" branch="False" />
+                <line number="14" hits="5" branch="False" />
+                <line number="15" hits="5" branch="False" />
+                <line number="16" hits="5" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="14" branch="False" />
+            <line number="8" hits="14" branch="False" />
+            <line number="12" hits="5" branch="False" />
+            <line number="13" hits="5" branch="False" />
+            <line number="14" hits="5" branch="False" />
+            <line number="15" hits="5" branch="False" />
+            <line number="16" hits="5" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Validation.ValidationResultDetail" filename="Abi.DeveloperEvaluation.Common\Validation\ValidationResult.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="get_IsValid" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Errors" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(FluentValidation.Results.ValidationResult)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="4" branch="False" />
+                <line number="19" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="3" branch="False" />
+            <line number="8" hits="7" branch="False" />
+            <line number="10" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="4" branch="False" />
+            <line number="19" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Validation.Validator/&lt;&gt;c__0`1" filename="Abi.DeveloperEvaluation.Common\Validation\Validator.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="&lt;ValidateAsync&gt;b__0_0" signature="(FluentValidation.Results.ValidationFailure)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Validation.Validator/&lt;ValidateAsync&gt;d__0`1" filename="Abi.DeveloperEvaluation.Common\Validation\Validator.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="9" hits="2" branch="False" />
+                <line number="11" hits="2" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="129" type="jump" coverage="100%" />
+                    <condition number="143" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="12" hits="2" branch="False" />
+                <line number="14" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="2" branch="False" />
+            <line number="11" hits="2" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="129" type="jump" coverage="100%" />
+                <condition number="143" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="12" hits="2" branch="False" />
+            <line number="14" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Security.AuthenticationExtension" filename="Abi.DeveloperEvaluation.Common\Security\AuthenticationExtension.cs" line-rate="0.4583" branch-rate="0.5" complexity="2">
+          <methods>
+            <method name="AddJwtAuthentication" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)" line-rate="0.4583" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="14" hits="2" branch="False" />
+                <line number="16" hits="2" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="25" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="17" hits="2" branch="False" />
+                <line number="19" hits="2" branch="False" />
+                <line number="21" hits="2" branch="False" />
+                <line number="22" hits="2" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="2" branch="False" />
+                <line number="27" hits="2" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="2" branch="False" />
+                <line number="40" hits="2" branch="False" />
+                <line number="42" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="2" branch="False" />
+            <line number="16" hits="2" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="25" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="17" hits="2" branch="False" />
+            <line number="19" hits="2" branch="False" />
+            <line number="21" hits="2" branch="False" />
+            <line number="22" hits="2" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="2" branch="False" />
+            <line number="27" hits="2" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="2" branch="False" />
+            <line number="40" hits="2" branch="False" />
+            <line number="42" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Security.BCryptPasswordHasher" filename="Abi.DeveloperEvaluation.Common\Security\BCryptPasswordHasher.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="HashPassword" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="VerifyPassword" signature="(System.String,System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="28" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="17" hits="1" branch="False" />
+            <line number="28" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Security.JwtTokenGenerator" filename="Abi.DeveloperEvaluation.Common\Security\JwtTokenGenerator.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="GenerateToken" signature="(Abi.DeveloperEvaluation.Common.Security.IUser)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="41" hits="3" branch="False" />
+                <line number="42" hits="3" branch="False" />
+                <line number="44" hits="2" branch="False" />
+                <line number="45" hits="2" branch="False" />
+                <line number="46" hits="2" branch="False" />
+                <line number="47" hits="2" branch="False" />
+                <line number="48" hits="2" branch="False" />
+                <line number="49" hits="2" branch="False" />
+                <line number="51" hits="1" branch="False" />
+                <line number="52" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+                <line number="54" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+                <line number="57" hits="1" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="60" hits="1" branch="False" />
+                <line number="61" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Microsoft.Extensions.Configuration.IConfiguration)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="6" branch="False" />
+                <line number="22" hits="6" branch="False" />
+                <line number="23" hits="6" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="41" hits="3" branch="False" />
+            <line number="42" hits="3" branch="False" />
+            <line number="44" hits="2" branch="False" />
+            <line number="45" hits="2" branch="False" />
+            <line number="46" hits="2" branch="False" />
+            <line number="47" hits="2" branch="False" />
+            <line number="48" hits="2" branch="False" />
+            <line number="49" hits="2" branch="False" />
+            <line number="51" hits="1" branch="False" />
+            <line number="52" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+            <line number="54" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="57" hits="1" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="60" hits="1" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="20" hits="6" branch="False" />
+            <line number="22" hits="6" branch="False" />
+            <line number="23" hits="6" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.Logging.LoggingExtension" filename="Abi.DeveloperEvaluation.Common\Logging\LoggingExtension.cs" line-rate="0.7735" branch-rate="0.1" complexity="10">
+          <methods>
+            <method name="AddDefaultLogging" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="0.9393" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+                <line number="57" hits="1" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="1" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="1" branch="False" />
+                <line number="63" hits="1" branch="False" />
+                <line number="64" hits="1" branch="False" />
+                <line number="65" hits="1" branch="False" />
+                <line number="66" hits="1" branch="False" />
+                <line number="67" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="138" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="68" hits="1" branch="False" />
+                <line number="69" hits="0" branch="False" />
+                <line number="70" hits="0" branch="False" />
+                <line number="71" hits="1" branch="False" />
+                <line number="72" hits="1" branch="False" />
+                <line number="73" hits="1" branch="False" />
+                <line number="74" hits="1" branch="False" />
+                <line number="75" hits="1" branch="False" />
+                <line number="76" hits="1" branch="False" />
+                <line number="77" hits="1" branch="False" />
+                <line number="78" hits="1" branch="False" />
+                <line number="79" hits="1" branch="False" />
+                <line number="80" hits="1" branch="False" />
+                <line number="81" hits="1" branch="False" />
+                <line number="82" hits="1" branch="False" />
+                <line number="83" hits="1" branch="False" />
+                <line number="84" hits="1" branch="False" />
+                <line number="85" hits="2" branch="False" />
+                <line number="87" hits="1" branch="False" />
+                <line number="89" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="UseDefaultLogging" signature="(Microsoft.AspNetCore.Builder.WebApplication)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="97" hits="0" branch="False" />
+                <line number="99" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="100" hits="0" branch="False" />
+                <line number="101" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".cctor" signature="()" line-rate="0.625" branch-rate="0" complexity="6">
+              <lines>
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+                <line number="33" hits="1" branch="False" />
+                <line number="34" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="35" hits="1" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="1" branch="False" />
+                <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="50" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="72" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="41" hits="1" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="57" hits="1" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="1" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="63" hits="1" branch="False" />
+            <line number="64" hits="1" branch="False" />
+            <line number="65" hits="1" branch="False" />
+            <line number="66" hits="1" branch="False" />
+            <line number="67" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="138" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="68" hits="1" branch="False" />
+            <line number="69" hits="0" branch="False" />
+            <line number="70" hits="0" branch="False" />
+            <line number="71" hits="1" branch="False" />
+            <line number="72" hits="1" branch="False" />
+            <line number="73" hits="1" branch="False" />
+            <line number="74" hits="1" branch="False" />
+            <line number="75" hits="1" branch="False" />
+            <line number="76" hits="1" branch="False" />
+            <line number="77" hits="1" branch="False" />
+            <line number="78" hits="1" branch="False" />
+            <line number="79" hits="1" branch="False" />
+            <line number="80" hits="1" branch="False" />
+            <line number="81" hits="1" branch="False" />
+            <line number="82" hits="1" branch="False" />
+            <line number="83" hits="1" branch="False" />
+            <line number="84" hits="1" branch="False" />
+            <line number="85" hits="2" branch="False" />
+            <line number="87" hits="1" branch="False" />
+            <line number="89" hits="1" branch="False" />
+            <line number="97" hits="0" branch="False" />
+            <line number="99" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="16" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="100" hits="0" branch="False" />
+            <line number="101" hits="0" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="33" hits="1" branch="False" />
+            <line number="34" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="7" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="35" hits="1" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="50" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="40" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="72" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="41" hits="1" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.HealthChecks.HealthChecksExtension" filename="Abi.DeveloperEvaluation.Common\HealthChecks\HealthChecksExtension.cs" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="AddBasicHealthChecks" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="UseBasicHealthChecks" signature="(Microsoft.AspNetCore.Builder.WebApplication)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="77" hits="0" branch="False" />
+                <line number="78" hits="0" branch="False" />
+                <line number="80" hits="0" branch="False" />
+                <line number="81" hits="0" branch="False" />
+                <line number="83" hits="0" branch="False" />
+                <line number="84" hits="0" branch="False" />
+                <line number="86" hits="0" branch="False" />
+                <line number="87" hits="0" branch="False" />
+                <line number="88" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="WriteHealtCheckRespose" signature="(Microsoft.AspNetCore.Builder.WebApplication,System.String)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="104" hits="0" branch="False" />
+                <line number="105" hits="0" branch="False" />
+                <line number="106" hits="0" branch="False" />
+                <line number="107" hits="0" branch="False" />
+                <line number="108" hits="0" branch="False" />
+                <line number="109" hits="0" branch="False" />
+                <line number="110" hits="0" branch="False" />
+                <line number="111" hits="0" branch="False" />
+                <line number="112" hits="0" branch="False" />
+                <line number="113" hits="0" branch="False" />
+                <line number="114" hits="0" branch="False" />
+                <line number="115" hits="0" branch="False" />
+                <line number="116" hits="0" branch="False" />
+                <line number="117" hits="0" branch="False" />
+                <line number="118" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="67" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="119" hits="0" branch="False" />
+                <line number="120" hits="0" branch="False" />
+                <line number="121" hits="0" branch="False" />
+                <line number="122" hits="0" branch="False" />
+                <line number="123" hits="0" branch="False" />
+                <line number="124" hits="0" branch="False" />
+                <line number="125" hits="0" branch="False" />
+                <line number="126" hits="0" branch="False" />
+                <line number="127" hits="0" branch="False" />
+                <line number="128" hits="0" branch="False" />
+                <line number="129" hits="0" branch="False" />
+                <line number="130" hits="0" branch="False" />
+                <line number="132" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="77" hits="0" branch="False" />
+            <line number="78" hits="0" branch="False" />
+            <line number="80" hits="0" branch="False" />
+            <line number="81" hits="0" branch="False" />
+            <line number="83" hits="0" branch="False" />
+            <line number="84" hits="0" branch="False" />
+            <line number="86" hits="0" branch="False" />
+            <line number="87" hits="0" branch="False" />
+            <line number="88" hits="0" branch="False" />
+            <line number="104" hits="0" branch="False" />
+            <line number="105" hits="0" branch="False" />
+            <line number="106" hits="0" branch="False" />
+            <line number="107" hits="0" branch="False" />
+            <line number="108" hits="0" branch="False" />
+            <line number="109" hits="0" branch="False" />
+            <line number="110" hits="0" branch="False" />
+            <line number="111" hits="0" branch="False" />
+            <line number="112" hits="0" branch="False" />
+            <line number="113" hits="0" branch="False" />
+            <line number="114" hits="0" branch="False" />
+            <line number="115" hits="0" branch="False" />
+            <line number="116" hits="0" branch="False" />
+            <line number="117" hits="0" branch="False" />
+            <line number="118" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="67" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="119" hits="0" branch="False" />
+            <line number="120" hits="0" branch="False" />
+            <line number="121" hits="0" branch="False" />
+            <line number="122" hits="0" branch="False" />
+            <line number="123" hits="0" branch="False" />
+            <line number="124" hits="0" branch="False" />
+            <line number="125" hits="0" branch="False" />
+            <line number="126" hits="0" branch="False" />
+            <line number="127" hits="0" branch="False" />
+            <line number="128" hits="0" branch="False" />
+            <line number="129" hits="0" branch="False" />
+            <line number="130" hits="0" branch="False" />
+            <line number="132" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Common.HealthChecks.HealthChecksExtension/&lt;&gt;c__DisplayClass2_0/&lt;&lt;WriteHealtCheckRespose&gt;b__1&gt;d" filename="Abi.DeveloperEvaluation.Common\HealthChecks\HealthChecksExtension.cs" line-rate="1" branch-rate="0" complexity="2">
+          <methods />
+          <lines />
+        </class>
+      </classes>
+    </package>
+    <package name="Abi.DeveloperEvaluation.Domain" line-rate="0.9514" branch-rate="0.9333" complexity="66">
+      <classes>
+        <class name="DomainException" filename="Abi.DeveloperEvaluation.Domain\Exceptions\DomainException.cs" line-rate="0.5" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="3" hits="10" branch="False" />
+                <line number="5" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.Exception)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="3" hits="10" branch="False" />
+            <line number="5" hits="10" branch="False" />
+            <line number="7" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.Events.BaseEvent" filename="Abi.DeveloperEvaluation.Domain\Events\BaseEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_OccurredOn" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="15" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="15" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.Events.SaleCancelledEvent" filename="Abi.DeveloperEvaluation.Domain\Events\SaleCancelledEvent.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="get_SaleId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Reason" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CancelledAt" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Guid,System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="6" branch="False" />
+                <line number="11" hits="6" branch="False" />
+                <line number="12" hits="6" branch="False" />
+                <line number="13" hits="6" branch="False" />
+                <line number="14" hits="6" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="1" branch="False" />
+            <line number="6" hits="1" branch="False" />
+            <line number="7" hits="1" branch="False" />
+            <line number="9" hits="6" branch="False" />
+            <line number="11" hits="6" branch="False" />
+            <line number="12" hits="6" branch="False" />
+            <line number="13" hits="6" branch="False" />
+            <line number="14" hits="6" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.Events.SaleCreatedEvent" filename="Abi.DeveloperEvaluation.Domain\Events\SaleCreatedEvent.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="get_SaleId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaleDate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CustomerId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TotalAmount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Guid,System.DateTime,System.Guid,System.Decimal)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="2" branch="False" />
+                <line number="12" hits="2" branch="False" />
+                <line number="13" hits="2" branch="False" />
+                <line number="14" hits="2" branch="False" />
+                <line number="15" hits="2" branch="False" />
+                <line number="16" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="1" branch="False" />
+            <line number="6" hits="1" branch="False" />
+            <line number="7" hits="1" branch="False" />
+            <line number="8" hits="1" branch="False" />
+            <line number="10" hits="2" branch="False" />
+            <line number="12" hits="2" branch="False" />
+            <line number="13" hits="2" branch="False" />
+            <line number="14" hits="2" branch="False" />
+            <line number="15" hits="2" branch="False" />
+            <line number="16" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.Events.SaleModifiedEvent" filename="Abi.DeveloperEvaluation.Domain\Events\SaleModifiedEvent.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="get_SaleId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaleNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ModifiedAt" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Status" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Guid,System.String,System.DateTime,Abi.DeveloperEvaluation.Domain.Enums.SaleStatus)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="4" branch="False" />
+                <line number="13" hits="4" branch="False" />
+                <line number="14" hits="4" branch="False" />
+                <line number="15" hits="4" branch="False" />
+                <line number="16" hits="4" branch="False" />
+                <line number="17" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="1" branch="False" />
+            <line number="8" hits="1" branch="False" />
+            <line number="9" hits="1" branch="False" />
+            <line number="10" hits="5" branch="False" />
+            <line number="11" hits="4" branch="False" />
+            <line number="13" hits="4" branch="False" />
+            <line number="14" hits="4" branch="False" />
+            <line number="15" hits="4" branch="False" />
+            <line number="16" hits="4" branch="False" />
+            <line number="17" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.Entities.Sale" filename="Abi.DeveloperEvaluation.Domain\Entities\Sale.cs" line-rate="1" branch-rate="1" complexity="24">
+          <methods>
+            <method name="get_SaleNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="48" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaleDate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="26" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CustomerId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="9" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CustomerName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="42" branch="False" />
+              </lines>
+            </method>
+            <method name="get_BranchId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="8" branch="False" />
+              </lines>
+            </method>
+            <method name="get_BranchName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="34" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Items" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="63" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Status" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="32" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TotalAmount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_DomainEvents" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="42" branch="False" />
+              </lines>
+            </method>
+            <method name="AddItem" signature="(Abi.DeveloperEvaluation.Domain.Entities.SaleItem)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="4" branch="False" />
+                <line number="22" hits="4" branch="False" />
+                <line number="23" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="Cancel" signature="(System.String)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="26" hits="6" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="27" hits="1" branch="False" />
+                <line number="29" hits="5" branch="False" />
+                <line number="31" hits="5" branch="False" />
+                <line number="32" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="MarkAsCompleted" signature="()" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="35" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="11" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="36" hits="1" branch="False" />
+                <line number="38" hits="4" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="55" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="39" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Modify" signature="(System.String,System.Collections.Generic.List`1&lt;Abi.DeveloperEvaluation.Domain.Entities.SaleItem&gt;,Abi.DeveloperEvaluation.Domain.Enums.SaleStatus)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="47" hits="4" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="48" hits="1" branch="False" />
+                <line number="50" hits="3" branch="False" />
+                <line number="52" hits="3" branch="False" />
+                <line number="53" hits="12" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="80" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="55" hits="3" branch="False" />
+                <line number="56" hits="3" branch="False" />
+                <line number="59" hits="3" branch="False" />
+                <line number="61" hits="3" branch="False" />
+                <line number="62" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="ClearEvents" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="65" hits="3" branch="False" />
+                <line number="66" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="CalculateDiscounts" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="69" hits="4" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="31" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="70" hits="1" branch="False" />
+                <line number="71" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="48" branch="False" />
+            <line number="10" hits="26" branch="False" />
+            <line number="11" hits="9" branch="False" />
+            <line number="12" hits="42" branch="False" />
+            <line number="13" hits="8" branch="False" />
+            <line number="14" hits="34" branch="False" />
+            <line number="15" hits="63" branch="False" />
+            <line number="16" hits="32" branch="False" />
+            <line number="17" hits="6" branch="False" />
+            <line number="18" hits="42" branch="False" />
+            <line number="21" hits="4" branch="False" />
+            <line number="22" hits="4" branch="False" />
+            <line number="23" hits="4" branch="False" />
+            <line number="26" hits="6" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="7" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="27" hits="1" branch="False" />
+            <line number="29" hits="5" branch="False" />
+            <line number="31" hits="5" branch="False" />
+            <line number="32" hits="5" branch="False" />
+            <line number="35" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="11" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="36" hits="1" branch="False" />
+            <line number="38" hits="4" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="55" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="39" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="1" branch="False" />
+            <line number="47" hits="4" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="7" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="48" hits="1" branch="False" />
+            <line number="50" hits="3" branch="False" />
+            <line number="52" hits="3" branch="False" />
+            <line number="53" hits="12" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="80" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="55" hits="3" branch="False" />
+            <line number="56" hits="3" branch="False" />
+            <line number="59" hits="3" branch="False" />
+            <line number="61" hits="3" branch="False" />
+            <line number="62" hits="3" branch="False" />
+            <line number="65" hits="3" branch="False" />
+            <line number="66" hits="3" branch="False" />
+            <line number="69" hits="4" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="31" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="70" hits="1" branch="False" />
+            <line number="71" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.Entities.SaleItem" filename="Abi.DeveloperEvaluation.Domain\Entities\SaleItem.cs" line-rate="1" branch-rate="1" complexity="12">
+          <methods>
+            <method name="get_ProductId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="18" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ProductName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="41" branch="False" />
+              </lines>
+            </method>
+            <method name="get_UnitPrice" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="40" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Quantity" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="76" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Discount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="18" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Total" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="ApplyDiscount" signature="()" line-rate="1" branch-rate="1" complexity="6">
+              <lines>
+                <line number="16" hits="13" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="8" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="17" hits="1" branch="False" />
+                <line number="19" hits="12" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="29" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="2" branch="False" />
+                <line number="21" hits="10" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="83" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="22" hits="9" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="18" branch="False" />
+            <line number="8" hits="41" branch="False" />
+            <line number="9" hits="40" branch="False" />
+            <line number="10" hits="76" branch="False" />
+            <line number="11" hits="18" branch="False" />
+            <line number="12" hits="3" branch="False" />
+            <line number="16" hits="13" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="8" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="17" hits="1" branch="False" />
+            <line number="19" hits="12" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="29" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="20" hits="2" branch="False" />
+            <line number="21" hits="10" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="83" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="22" hits="9" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.DomainValidation.SaleItemValidator" filename="Abi.DeveloperEvaluation.Domain\DomainValidation\SaleItemValidator.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="Validate" signature="(Abi.DeveloperEvaluation.Domain.Entities.SaleItem)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="10" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="11" hits="1" branch="False" />
+                <line number="13" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="36" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="7" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="11" hits="1" branch="False" />
+            <line number="13" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="36" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.DomainValidation.SaleValidator" filename="Abi.DeveloperEvaluation.Domain\DomainValidation\SaleValidator.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="Validate" signature="(Abi.DeveloperEvaluation.Domain.Entities.Sale)" line-rate="1" branch-rate="1" complexity="6">
+              <lines>
+                <line number="10" hits="4" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="11" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="11" hits="1" branch="False" />
+                <line number="13" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="35" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="1" branch="False" />
+                <line number="16" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="64" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="4" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="11" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="11" hits="1" branch="False" />
+            <line number="13" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="35" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="14" hits="1" branch="False" />
+            <line number="16" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="64" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Domain.Common.BaseEntity" filename="Abi.DeveloperEvaluation.Domain\Common\BaseEntity.cs" line-rate="0.25" branch-rate="0" complexity="3">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="32" branch="False" />
+              </lines>
+            </method>
+            <method name="CompareTo" signature="(Abi.DeveloperEvaluation.Domain.Common.BaseEntity)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="11" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="1" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="13" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="32" branch="False" />
+            <line number="11" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="1" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="13" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Abi.DeveloperEvaluation.Infra" line-rate="0.7761" branch-rate="1" complexity="20">
+      <classes>
+        <class name="Abi.DeveloperEvaluation.Infra.DefaultContext" filename="Abi.DeveloperEvaluation.Infra\DefaultContext.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="get_Sales" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaleItems" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="OnModelCreating" signature="(Microsoft.EntityFrameworkCore.ModelBuilder)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Microsoft.EntityFrameworkCore.DbContextOptions`1&lt;Abi.DeveloperEvaluation.Infra.DefaultContext&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="2" branch="False" />
+                <line number="17" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="2" branch="False" />
+            <line number="13" hits="2" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="15" hits="2" branch="False" />
+            <line number="17" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.YourDbContextFactory" filename="Abi.DeveloperEvaluation.Infra\DefaultContext.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="CreateDbContext" signature="(System.String[])" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="49" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="49" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Persistence.UnitOfWork" filename="Abi.DeveloperEvaluation.Infra\UnitOfWork.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Microsoft.EntityFrameworkCore.DbContext)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="2" branch="False" />
+                <line number="12" hits="2" branch="False" />
+                <line number="13" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="2" branch="False" />
+            <line number="12" hits="2" branch="False" />
+            <line number="13" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Persistence.UnitOfWork/&lt;CommitAsync&gt;d__2" filename="Abi.DeveloperEvaluation.Infra\UnitOfWork.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Repositories.SaleRepository" filename="Abi.DeveloperEvaluation.Infra\Repositories\SaleRepository.cs" line-rate="0.75" branch-rate="1" complexity="4">
+          <methods>
+            <method name="Query" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="28" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GetQueryableAsync" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="33" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="RemoveAllItems" signature="(Abi.DeveloperEvaluation.Domain.Entities.Sale)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="54" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Microsoft.EntityFrameworkCore.DbContext)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="7" branch="False" />
+                <line number="18" hits="7" branch="False" />
+                <line number="19" hits="7" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="28" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="54" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="16" hits="7" branch="False" />
+            <line number="18" hits="7" branch="False" />
+            <line number="19" hits="7" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Repositories.SaleRepository/&lt;AddAsync&gt;d__6" filename="Abi.DeveloperEvaluation.Infra\Repositories\SaleRepository.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="39" hits="1" branch="False" />
+                <line number="40" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="39" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Repositories.SaleRepository/&lt;ExistsAsync&gt;d__8" filename="Abi.DeveloperEvaluation.Infra\Repositories\SaleRepository.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="47" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="47" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Repositories.SaleRepository/&lt;GetAllAsync&gt;d__5" filename="Abi.DeveloperEvaluation.Infra\Repositories\SaleRepository.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="36" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Repositories.SaleRepository/&lt;GetByIdAsync&gt;d__2" filename="Abi.DeveloperEvaluation.Infra\Repositories\SaleRepository.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Repositories.SaleRepository/&lt;SaveChangesAsync&gt;d__9" filename="Abi.DeveloperEvaluation.Infra\Repositories\SaleRepository.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="50" hits="2" branch="False" />
+                <line number="51" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="50" hits="2" branch="False" />
+            <line number="51" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Repositories.SaleRepository/&lt;UpdateAsync&gt;d__7" filename="Abi.DeveloperEvaluation.Infra\Repositories\SaleRepository.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Mapping.SaleItemMap" filename="Abi.DeveloperEvaluation.Infra\Mapping\SaleItemMap.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Configure" signature="(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1&lt;Abi.DeveloperEvaluation.Domain.Entities.SaleItem&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.Mapping.SaleMap" filename="Abi.DeveloperEvaluation.Infra\Mapping\SaleMap.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Configure" signature="(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1&lt;Abi.DeveloperEvaluation.Domain.Entities.Sale&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.Infra.DependencyInjection.DependencyInjection" filename="Abi.DeveloperEvaluation.Infra\DependencyInjection.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="AddInfrastructure" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="3" branch="False" />
+                <line number="12" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="3" branch="False" />
+            <line number="12" hits="3" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Abi.DeveloperEvaluation.IoC" line-rate="0.8387" branch-rate="0.5" complexity="8">
+      <classes>
+        <class name="MigrationInitializer" filename="Abi.DeveloperEvaluation.IoC\ModuleInitializers\MigrationInitializer.cs" line-rate="0.6666" branch-rate="0.5" complexity="4">
+          <methods>
+            <method name="ApplyMigrations" signature="(System.IServiceProvider,Microsoft.Extensions.Logging.ILogger,System.Boolean)" line-rate="0.6666" branch-rate="0.5" complexity="4">
+              <lines>
+                <line number="10" hits="1" branch="False" />
+                <line number="11" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="18" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="42" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="65" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="21" hits="1" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="37" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="1" branch="False" />
+            <line number="11" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="18" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="42" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="20" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="65" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="21" hits="1" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="37" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.IoC.DependencyResolver" filename="Abi.DeveloperEvaluation.IoC\DependencyResolver.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="RegisterDependencies" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="1" branch="False" />
+                <line number="11" hits="1" branch="False" />
+                <line number="12" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="1" branch="False" />
+            <line number="11" hits="1" branch="False" />
+            <line number="12" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.IoC.ModuleInitializers.ApplicationModuleInitializer" filename="Abi.DeveloperEvaluation.IoC\ModuleInitializers\ApplicationModuleInitializer.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Initialize" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="2" branch="False" />
+                <line number="16" hits="2" branch="False" />
+                <line number="17" hits="2" branch="False" />
+                <line number="18" hits="2" branch="False" />
+                <line number="19" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="2" branch="False" />
+            <line number="16" hits="2" branch="False" />
+            <line number="17" hits="2" branch="False" />
+            <line number="18" hits="2" branch="False" />
+            <line number="19" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.IoC.ModuleInitializers.InfrastructureModuleInitializer" filename="Abi.DeveloperEvaluation.IoC\ModuleInitializers\InfrastructureModuleInitializer.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Initialize" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="3" branch="False" />
+                <line number="17" hits="2" branch="False" />
+                <line number="18" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="3" branch="False" />
+            <line number="17" hits="2" branch="False" />
+            <line number="18" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Abi.DeveloperEvaluation.IoC.ModuleInitializers.WebApiModuleInitializer" filename="Abi.DeveloperEvaluation.IoC\ModuleInitializers\WebApiModuleInitializer.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Initialize" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="3" branch="False" />
+                <line number="11" hits="3" branch="False" />
+                <line number="12" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="3" branch="False" />
+            <line number="11" hits="3" branch="False" />
+            <line number="12" hits="3" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
