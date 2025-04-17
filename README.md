@@ -20,8 +20,8 @@ Esse comando irá:
 
 ---
 
-## 📊 Relatório de cobertura disponível em:
-`backend/src/Abi.DeveloperEvaluation.Unit/TestResults/CoverageReport/index.html`
+📊 Veja o relatório de cobertura de testes completo:
+[🔗 Acessar testes](https://vinialexandre.github.io/abi-gth-omnia-developer-evaluation/coverage/index.html)
 
 ---
 

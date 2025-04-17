@@ -15,18 +15,18 @@ coverlet ./src/Abi.DeveloperEvaluation.Unit/bin/Release/net9.0/Abi.DeveloperEval
   --target "dotnet" \
   --targetargs "test src/Abi.DeveloperEvaluation.Unit/Abi.DeveloperEvaluation.Unit.csproj --no-build --configuration Release" \
   --format cobertura \
-  --output ./src/Abi.DeveloperEvaluation.Unit/TestResults/coverage.cobertura.xml \
+  --output ./../docs/coverage/coverage.cobertura.xml \
   --exclude "[*]*.Program" "[*]*.Startup" "[*]*.Migrations.*"
 
 echo "📊 Generating coverage report..."
 reportgenerator \
-  -reports:./src/Abi.DeveloperEvaluation.Unit/TestResults/coverage.cobertura.xml \
-  -targetdir:./src/Abi.DeveloperEvaluation.Unit/TestResults/CoverageReport \
+  -reports:./../docs/coverage/coverage.cobertura.xml \
+  -targetdir:./../docs/coverage/report \
   -reporttypes:Html
 
 echo "🧽 Cleaning temporary files..."
 rm -rf bin obj
 
 echo ""
-echo "✅ Relatório gerado em: /Abi.DeveloperEvaluation.Unit/TestResults/CoverageReport/index.html"
+echo "✅ Relatório gerado em: /docs/coverage/report/index.html"
 read -p "Pressione Enter para continuar..."
