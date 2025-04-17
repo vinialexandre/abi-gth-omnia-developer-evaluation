@@ -5,7 +5,7 @@
 		"description": "Collection para testar os endpoints de venda e regras de negócio do desafio Developer Evaluation.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1992982",
-		"_collection_link": "https://web.postman.co/workspace/ambev~84b8d17b-02b2-4183-8d4b-c166835e9c63/collection/1992982-f7546639-4402-4a89-8875-333a0a7401be?action=share&source=collection_link&creator=1992982"
+		"_collection_link": "https://sequor.postman.co/workspace/ambev~84b8d17b-02b2-4183-8d4b-c166835e9c63/collection/1992982-f7546639-4402-4a89-8875-333a0a7401be?action=share&source=collection_link&creator=1992982"
 	},
 	"item": [
 		{
@@ -201,7 +201,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"saleNumber\": \"S{{saleNumber}}\",\r\n    \"saleDate\": \"{{saleDate}}\",\r\n    \"customerId\": \"{{customerId}}\",\r\n    \"customerName\": \"Cliente 3\",\r\n    \"branchId\": \"{{branchId}}\",\r\n    \"branchName\": \"Filial 4\",\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"4d07ad2c-9cfa-46e2-9c0c-1d4a33178e62\",\r\n            \"productName\": \"Produto 3\",\r\n            \"unitPrice\": \"40\",\r\n            \"quantity\": 25\r\n        }\r\n    ]\r\n}"
+					"raw": "{\r\n    \"saleNumber\": \"S{{saleNumber}}\",\r\n    \"saleDate\": \"{{saleDate}}\",\r\n    \"customerId\": \"{{customerId}}\",\r\n    \"customerName\": \"Cliente 3\",\r\n    \"branchId\": \"{{branchId}}\",\r\n    \"branchName\": \"Filial 4\",\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"4d07ad2c-9cfa-46e2-9c0c-1d4a33178e62\",\r\n            \"productName\": \"Produto 3\",\r\n            \"unitPrice\": 40,\r\n            \"quantity\": 25\r\n        }\r\n    ]\r\n}"
 				},
 				"url": {
 					"raw": "{{localhost}}api/sales",
