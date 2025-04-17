@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.8212999999999999" branch-rate="0.7625" version="1.9" timestamp="1744861399" lines-covered="492" lines-valid="599" branches-covered="61" branches-valid="80">
+<coverage line-rate="0.8212999999999999" branch-rate="0.7625" version="1.9" timestamp="1744863297" lines-covered="492" lines-valid="599" branches-covered="61" branches-valid="80">
   <sources>
     <source>C:\Users\vinio\OneDrive\Documentos\teste-abi\backend\src\</source>
   </sources>
