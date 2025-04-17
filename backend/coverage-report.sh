@@ -11,17 +11,17 @@ dotnet restore Abi.DeveloperEvaluation.sln
 dotnet build Abi.DeveloperEvaluation.sln --configuration Release --no-restore
 
 echo "✅ Running tests with coverage..."
-coverlet ./src/Abi.DeveloperEvaluation.Unit/bin/Release/net9.0/Abi.DeveloperEvaluation.Unit.dll \
+coverlet ./src/Abi.DeveloperEvaluation.Tests/bin/Release/net9.0/Abi.DeveloperEvaluation.Tests.dll \
   --target "dotnet" \
-  --targetargs "test src/Abi.DeveloperEvaluation.Unit/Abi.DeveloperEvaluation.Unit.csproj --no-build --configuration Release" \
+  --targetargs "test src/Abi.DeveloperEvaluation.Tests/Abi.DeveloperEvaluation.Tests.csproj --no-build --configuration Release" \
   --format cobertura \
-  --output ./../docs/coverage/coverage.cobertura.xml \
-  --exclude "[*]*.Program" "[*]*.Startup" "[*]*.Migrations.*"
+  --output ./docs/coverage/coverage.cobertura.xml \
+  --exclude "[Abi.DeveloperEvaluation.WebApi*]*" "[*]*.Program" "[*]*.Startup" "[*]*.Migrations.*"
 
 echo "📊 Generating coverage report..."
 reportgenerator \
-  -reports:./../docs/coverage/coverage.cobertura.xml \
-  -targetdir:./../docs \
+  -reports:./docs/coverage/coverage.cobertura.xml \
+  -targetdir:./docs \
   -reporttypes:Html
 
 echo "🧽 Cleaning temporary files..."
