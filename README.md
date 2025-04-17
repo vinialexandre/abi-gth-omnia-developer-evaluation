@@ -37,12 +37,27 @@ O desafio consiste em criar uma API para registro de vendas com:
 
 ---
 
+## 📮 Testando com Postman
+
+Para testar a API rapidamente:
+
+1. Abra o Postman
+2. Vá em `Import` > `Upload Files`
+3. Selecione o arquivo `Developer Evaluation - Sales API.postman_collection.json` disponível na **raiz do repositório**
+
+✅ A collection contém todos os endpoints de CRUD e cenários de negócio prontos para execução.
+
+> ⚠️ Lembre-se de garantir que a API esteja rodando em `https://localhost:5000`.
+> ⚠️ Divirta-se
+
+---
+
 ## 🧱 Estrutura e Patterns
 
 ### Domain
 - Entity (`Sale`, `SaleItem`)
 - Value Object
-- Domain Events (estrutura pronta)
+- Domain Events
 
 ### Application
 - CQRS com MediatR
@@ -63,26 +78,10 @@ O desafio consiste em criar uma API para registro de vendas com:
 
 ---
 
-## 📐 Nomeclaturas e Organização
-
-| Tipo         | Sufixo         | Exemplo                         |
-|--------------|----------------|----------------------------------|
-| Commands     | `Command`      | `CreateSaleCommand`              |
-| Queries      | `Query`        | `GetSaleByIdQuery`               |
-| Handlers     | `Handler`      | `GetAllSalesHandler`             |
-| DTOs         | `Request/Response` | `SaleRequest`, `SaleResponse` |
-| Middlewares  | `Middleware`   | `ValidationExceptionMiddleware`  |
-
----
-
 ## ✅ Testes
 
 ✔️ Foram priorizados testes **unitários** devido ao curto prazo:
 - Alta cobertura em `Application` (Handlers, Validações)
 - Testes em `Common` (HealthCheck, Responses)
-
-🔜 Testes de integração não implementados, mas estrutura preparada.
-
----
 
 > Desenvolvido por [Vinicius Oliveira](https://github.com/vinialexandre)
