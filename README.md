@@ -78,10 +78,4 @@ Para testar a API rapidamente:
 
 ---
 
-## ✅ Testes
-
-✔️ Foram priorizados testes **unitários** devido ao curto prazo:
-- Alta cobertura em `Application` (Handlers, Validações)
-- Testes em `Common` (HealthCheck, Responses)
-
 > Desenvolvido por [Vinicius Oliveira](https://github.com/vinialexandre)
