@@ -19,12 +19,12 @@ coverlet ./src/Abi.DeveloperEvaluation.Unit/bin/Release/net9.0/Abi.DeveloperEval
 
 reportgenerator ^
   -reports:./../docs/coverage/coverage.cobertura.xml ^
-  -targetdir:./../docs/coverage/report ^
+  -targetdir:./../docs ^
   -reporttypes:Html
 
 rmdir /s /q bin 2>nul
 rmdir /s /q obj 2>nul
 
 echo.
-echo ✅ Relatório gerado em: /docs/coverage/report/index.html
+echo ✅ Relatório gerado em: /docs/index.html
 pause

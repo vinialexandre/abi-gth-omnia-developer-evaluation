@@ -21,12 +21,12 @@ coverlet ./src/Abi.DeveloperEvaluation.Unit/bin/Release/net9.0/Abi.DeveloperEval
 echo "📊 Generating coverage report..."
 reportgenerator \
   -reports:./../docs/coverage/coverage.cobertura.xml \
-  -targetdir:./../docs/coverage/report \
+  -targetdir:./../docs \
   -reporttypes:Html
 
 echo "🧽 Cleaning temporary files..."
 rm -rf bin obj
 
 echo ""
-echo "✅ Relatório gerado em: /docs/coverage/report/index.html"
+echo "✅ Relatório gerado em: /docs/index.html"
 read -p "Pressione Enter para continuar..."
