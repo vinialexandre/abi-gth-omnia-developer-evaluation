@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratedMSBuildEditorConfigFile>$(IntermediateOutputPath)$(MSBuildProjectName).GeneratedMSBuildEditorConfig.editorconfig</GeneratedMSBuildEditorConfigFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Abi.DeveloperEvaluation.IoC.GeneratedMSBuildEditorConfig.editorconfig" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\Abi.DeveloperEvaluation.Domain\Abi.DeveloperEvaluation.Domain.csproj" />
+		<ProjectReference Include="..\Abi.DeveloperEvaluation.Application\Abi.DeveloperEvaluation.Application.csproj" />
+		<ProjectReference Include="..\Abi.DeveloperEvaluation.Infra\Abi.DeveloperEvaluation.Infra.csproj" />
+		<ProjectReference Include="..\Abi.DeveloperEvaluation.Common\Abi.DeveloperEvaluation.Common.csproj" />
+	</ItemGroup>
+
+</Project>

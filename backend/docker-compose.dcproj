@@ -7,7 +7,7 @@
     <ProjectGuid>4af79501-f785-4b98-8ee5-54be186d67a2</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>ambev.developerevaluation.webapi</DockerServiceName>
+    <DockerServiceName>abi.developerevaluation.webapi</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

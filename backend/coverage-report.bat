@@ -1,30 +1,30 @@
 @ECHO OFF
+SETLOCAL
 
-REM Install tools if not present
-dotnet tool install --global coverlet.console
-dotnet tool install --global dotnet-reportgenerator-globaltool
+dotnet tool install --global coverlet.console --version 6.0.4 --ignore-failed-sources
+dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.4.5 --ignore-failed-sources
 
-REM Clean and build solution
-dotnet restore Ambev.DeveloperEvaluation.sln
-dotnet build Ambev.DeveloperEvaluation.sln --configuration Release --no-restore
+SET PATH=%USERPROFILE%\.dotnet\tools;%PATH%
 
-REM Run tests with coverage
-dotnet test Ambev.DeveloperEvaluation.sln --no-restore --verbosity normal ^
-/p:CollectCoverage=true ^
-/p:CoverletOutputFormat=cobertura ^
-/p:CoverletOutput=./TestResults/coverage.cobertura.xml ^
-/p:Exclude="[*]*.Program%2c[*]*.Startup%2c[*]*.Migrations.*"
+dotnet restore Abi.DeveloperEvaluation.sln
+dotnet build Abi.DeveloperEvaluation.sln --configuration Release --no-restore
 
-REM Generate coverage report
+REM 
+coverlet ./src/Abi.DeveloperEvaluation.Unit/bin/Release/net9.0/Abi.DeveloperEvaluation.Unit.dll ^
+  --target "dotnet" ^
+  --targetargs "test src/Abi.DeveloperEvaluation.Unit/Abi.DeveloperEvaluation.Unit.csproj --no-build --configuration Release" ^
+  --format cobertura ^
+  --output ./src/Abi.DeveloperEvaluation.Unit/TestResults/coverage.cobertura.xml ^
+  --exclude "[*]*.Program" "[*]*.Startup" "[*]*.Migrations.*"
+
 reportgenerator ^
--reports:"./tests/**/TestResults/coverage.cobertura.xml" ^
--targetdir:"./TestResults/CoverageReport" ^
--reporttypes:Html
+  -reports:./src/Abi.DeveloperEvaluation.Unit/TestResults/coverage.cobertura.xml ^
+  -targetdir:./src/Abi.DeveloperEvaluation.Unit/TestResults/CoverageReport ^
+  -reporttypes:Html
 
-REM Removing temporary files
 rmdir /s /q bin 2>nul
 rmdir /s /q obj 2>nul
 
 echo.
-echo Coverage report generated at TestResults/CoverageReport/index.html
+echo ✅ Relatório gerado em: /Abi.DeveloperEvaluation.Unit/TestResults/CoverageReport/index.html
 pause

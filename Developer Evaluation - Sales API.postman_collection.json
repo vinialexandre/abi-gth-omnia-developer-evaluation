@@ -201,7 +201,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"saleNumber\": \"S{{saleNumber}}\",\r\n    \"saleDate\": \"{{saleDate}}\",\r\n    \"customerId\": \"{{customerId}}\",\r\n    \"customerName\": \"Cliente 3\",\r\n    \"branchId\": \"{{branchId}}\",\r\n    \"branchName\": \"Filial 4\",\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"4d07ad2c-9cfa-46e2-9c0c-1d4a33178e62\",\r\n            \"productName\": \"Produto 3\",\r\n            \"unitPrice\": 40,\r\n            \"quantity\": 25\r\n        }\r\n    ]\r\n}"
+					"raw": "{\r\n    \"saleNumber\": \"S{{saleNumber}}\",\r\n    \"saleDate\": \"{{saleDate}}\",\r\n    \"customerId\": \"{{customerId}}\",\r\n    \"customerName\": \"Cliente 3\",\r\n    \"branchId\": \"{{branchId}}\",\r\n    \"branchName\": \"Filial 4\",\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"4d07ad2c-9cfa-46e2-9c0c-1d4a33178e62\",\r\n            \"productName\": \"Produto 3\",\r\n            \"unitPrice\": \"40\",\r\n            \"quantity\": 25\r\n        }\r\n    ]\r\n}"
 				},
 				"url": {
 					"raw": "{{localhost}}api/sales",
@@ -216,25 +216,7 @@
 			"response": []
 		},
 		{
-			"name": "Buscar Venda por ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{localhost}}api/sales/{{saleId}}",
-					"host": [
-						"{{localhost}}api"
-					],
-					"path": [
-						"sales",
-						"{{saleId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Atualizar Venda",
+			"name": "Realizar Efetivação Venda",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -267,34 +249,34 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"saleNumber\": \"S{{saleNumber}}\",\n  \"saleDate\": \"{{saleDate}}\",\n  \"customerId\": \"{{customerId}}\",\n  \"customerName\": \"Cliente Atualizado\",\n  \"branchId\": \"{{branchId}}\",\n  \"branchName\": \"Filial Atualizada\",\n  \"items\": [\n    {\n      \"productId\": \"4d07ad2c-9cfa-46e2-9c0c-1d4a33178e62\",\n      \"productName\": \"Produto 1\",\n      \"unitPrice\": 10.0,\n      \"quantity\": 5\n    }\n  ]\n}"
+					"raw": "{\n  \"saleNumber\": \"S{{saleNumber}}\",\n  \"saleDate\": \"{{saleDate}}\",\n  \"customerId\": \"{{customerId}}\",\n  \"branchId\": \"{{branchId}}\",\n  \"customerName\": \"Cliente 3\",\n  \"branchName\": \"Filial 3\",\n  \"status\": \"Completed\",\n  \"items\": [\n    {\n        \"productId\": \"4d07ad2c-9cfa-46e2-9c0c-1d4a33178e62\",\n        \"productName\": \"Produto 3 - VENDA ATUALIZADA\",\n        \"unitPrice\": 30.00,\n        \"quantity\": 15,\n        \"discount\": 90.00,\n        \"total\": 360.00\n    }\n  ]\n}"
 				},
 				"url": {
-					"raw": "{{localhost}}api/sales/9601d0e1-0472-4fd2-8d8a-5d6e70bcb0d8",
+					"raw": "{{localhost}}api/sales/afa13e56-4fef-496c-93e4-4cdb8101ef62",
 					"host": [
 						"{{localhost}}api"
 					],
 					"path": [
 						"sales",
-						"9601d0e1-0472-4fd2-8d8a-5d6e70bcb0d8"
+						"afa13e56-4fef-496c-93e4-4cdb8101ef62"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Deletar Venda por ID",
+			"name": "Buscar Venda por ID",
 			"request": {
-				"method": "DELETE",
+				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{localhost}}api/sales/{{saleId}}",
+					"raw": "{{localhost}}api/sales/afa13e56-4fef-496c-93e4-4cdb8101ef62",
 					"host": [
 						"{{localhost}}api"
 					],
 					"path": [
 						"sales",
-						"{{saleId}}"
+						"afa13e56-4fef-496c-93e4-4cdb8101ef62"
 					]
 				}
 			},
@@ -302,9 +284,21 @@
 		},
 		{
 			"name": "Listar Todas as Vendas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{localhost}}api/sales",
 					"host": [
@@ -340,6 +334,34 @@
 							"key": "pageSize",
 							"value": "10"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar Venda por ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reason\": \"teste\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}api/sales/afa13e56-4fef-496c-93e4-4cdb8101ef62/cancel",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"sales",
+						"afa13e56-4fef-496c-93e4-4cdb8101ef62",
+						"cancel"
 					]
 				}
 			},

@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratedMSBuildEditorConfigFile>$(IntermediateOutputPath)$(MSBuildProjectName).GeneratedMSBuildEditorConfig.editorconfig</GeneratedMSBuildEditorConfigFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <DisableImplicitStaticAssets>true</DisableImplicitStaticAssets>
+    <UserSecretsId>3c58d567-b1d8-4a51-bd36-dbfddb84701b</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DisableImplicitStaticWebAssets>true</DisableImplicitStaticWebAssets>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="appsettings.Docker.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Abi.DeveloperEvaluation.WebApi.GeneratedMSBuildEditorConfig.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abi.DeveloperEvaluation.IoC\Abi.DeveloperEvaluation.IoC.csproj" />
+  </ItemGroup>
+
+</Project>

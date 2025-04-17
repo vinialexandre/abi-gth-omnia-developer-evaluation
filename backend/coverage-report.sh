@@ -1,29 +1,32 @@
 #!/bin/bash
 
-echo "Install tools if not present"
-dotnet tool install --global coverlet.console
-dotnet tool install --global dotnet-reportgenerator-globaltool
+echo "🛠️ Installing tools if not present..."
+dotnet tool install --global coverlet.console --version 6.0.4 --ignore-failed-sources
+dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.4.5 --ignore-failed-sources
 
-echo "Clean and build solution"
-dotnet restore
-dotnet build  Ambev.DeveloperEvaluation.sln --configuration Release --no-restore
+export PATH="$HOME/.dotnet/tools:$PATH"
 
-echo "Run tests with coverage"
-dotnet test  Ambev.DeveloperEvaluation.sln --no-restore --verbosity normal \
-/p:CollectCoverage=true \
-/p:CoverletOutputFormat=cobertura \
-/p:CoverletOutput=./TestResults/coverage.cobertura.xml \
-/p:Exclude="[*]*.Program,[*]*.Startup,[*]*.Migrations.*"
+echo "🧹 Cleaning and building solution..."
+dotnet restore Abi.DeveloperEvaluation.sln
+dotnet build Abi.DeveloperEvaluation.sln --configuration Release --no-restore
 
-echo "Generate coverage report"
+echo "✅ Running tests with coverage..."
+coverlet ./src/Abi.DeveloperEvaluation.Unit/bin/Release/net9.0/Abi.DeveloperEvaluation.Unit.dll \
+  --target "dotnet" \
+  --targetargs "test src/Abi.DeveloperEvaluation.Unit/Abi.DeveloperEvaluation.Unit.csproj --no-build --configuration Release" \
+  --format cobertura \
+  --output ./src/Abi.DeveloperEvaluation.Unit/TestResults/coverage.cobertura.xml \
+  --exclude "[*]*.Program" "[*]*.Startup" "[*]*.Migrations.*"
+
+echo "📊 Generating coverage report..."
 reportgenerator \
--reports:"./tests/**/TestResults/coverage.cobertura.xml" \
--targetdir:"./TestResults/CoverageReport" \
--reporttypes:Html
+  -reports:./src/Abi.DeveloperEvaluation.Unit/TestResults/coverage.cobertura.xml \
+  -targetdir:./src/Abi.DeveloperEvaluation.Unit/TestResults/CoverageReport \
+  -reporttypes:Html
 
-echo "Removing temporary files"
+echo "🧽 Cleaning temporary files..."
 rm -rf bin obj
 
 echo ""
-echo "Coverage report generated at TestResults/CoverageReport/index.html"
-pause
+echo "✅ Relatório gerado em: /Abi.DeveloperEvaluation.Unit/TestResults/CoverageReport/index.html"
+read -p "Pressione Enter para continuar..."
