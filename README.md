@@ -1,86 +1,119 @@
-# Developer Evaluation Project
+Segue um README mais **objetivo**, com explicação clara sobre o desafio, estrutura, padrões utilizados e execução via Docker:
 
-`READ CAREFULLY`
+---
 
-## Instructions
-**The test below will have up to 7 calendar days to be delivered from the date of receipt of this manual.**
+# Developer Evaluation - Sales API
 
-- The code must be versioned in a public Github repository and a link must be sent for evaluation once completed
-- Upload this template to your repository and start working from it
-- Read the instructions carefully and make sure all requirements are being addressed
-- The repository must provide instructions on how to configure, execute and test the project
-- Documentation and overall organization will also be taken into consideration
+API RESTful desenvolvida para resolver o desafio técnico proposto, com foco em arquitetura limpa, boas práticas de design e testes unitários.
 
-## Use Case
-**You are a developer on the DeveloperStore team. Now we need to implement the API prototypes.**
+📁 Repositório: [vinialexandre/abi-gth-omnia-developer-evaluation](https://github.com/vinialexandre/abi-gth-omnia-developer-evaluation)
 
-As we work with `DDD`, to reference entities from other domains, we use the `External Identities` pattern with denormalization of entity descriptions.
+---
 
-Therefore, you will write an API (complete CRUD) that handles sales records. The API needs to be able to inform:
+## 🔧 Como executar com Docker Compose
 
-* Sale number
-* Date when the sale was made
-* Customer
-* Total sale amount
-* Branch where the sale was made
-* Products
-* Quantities
-* Unit prices
-* Discounts
-* Total amount for each item
-* Cancelled/Not Cancelled
+Pré-requisitos:
+- Docker e Docker Compose instalados
 
-It's not mandatory, but it would be a differential to build code for publishing events of:
-* SaleCreated
-* SaleModified
-* SaleCancelled
-* ItemCancelled
+### Comando:
+```bash
+docker compose up --build
+```
 
-If you write the code, **it's not required** to actually publish to any Message Broker. You can log a message in the application log or however you find most convenient.
+Isso irá:
+- Subir o container da API (`Abi.DeveloperEvaluation.WebApi`)
+- Subir o container PostgreSQL
+- Aplicar migrations automaticamente
 
-### Business Rules
+### Acessos:
+- Swagger: https://localhost:5000/swagger
+- API: https://localhost:5000
+- PostgreSQL: `Host=db;Port=5432;Database=developer-evaluation;Username=postgres;Password=postgres`
 
-* Purchases above 4 identical items have a 10% discount
-* Purchases between 10 and 20 identical items have a 20% discount
-* It's not possible to sell above 20 identical items
-* Purchases below 4 items cannot have a discount
+---
 
-These business rules define quantity-based discounting tiers and limitations:
+## 🧠 Desafio
 
-1. Discount Tiers:
-   - 4+ items: 10% discount
-   - 10-20 items: 20% discount
+Criar uma API para registrar vendas com:
+- Itens, quantidades, descontos
+- Cliente e filial
+- Cancelamento de venda
+- Paginação
+- Regras de negócio aplicadas por item:
+  - 4+ itens: 10% de desconto
+  - 10-20 itens: 20% de desconto
+  - >20 itens: proibido
 
-2. Restrictions:
-   - Maximum limit: 20 items per product
-   - No discounts allowed for quantities below 4 items
+---
 
-## Overview
-This section provides a high-level overview of the project and the various skills and competencies it aims to assess for developer candidates. 
+## 📐 Arquitetura & Padrões
 
-See [Overview](/.doc/overview.md)
+### Domain
+- **Entity**, **Value Object**
+- **Domain Events** (ex: `SaleCreatedEvent`, `SaleCancelledEvent`)
+- Lógica de negócio encapsulada na entidade `Sale`
 
-## Tech Stack
-This section lists the key technologies used in the project, including the backend, testing, frontend, and database components. 
+### Application
+- **CQRS** com MediatR
+- **Handlers** para comandos e queries
+- **FluentValidation** para validações
 
-See [Tech Stack](/.doc/tech-stack.md)
+### Infra
+- **Repository Pattern**
+- EF Core com PostgreSQL
 
-## Frameworks
-This section outlines the frameworks and libraries that are leveraged in the project to enhance development productivity and maintainability. 
+### WebApi
+- **Controllers** (como `SaleController`)
+- **Middlewares**:
+  - `DomainExceptionMiddleware`
+  - `ValidationExceptionMiddleware`
 
-See [Frameworks](/.doc/frameworks.md)
+### Common
+- HealthChecks
+- Logging
+- Response padrão (via `ApiResponse`)
 
-<!-- 
-## API Structure
-This section includes links to the detailed documentation for the different API resources:
-- [API General](./docs/general-api.md)
-- [Products API](/.doc/products-api.md)
-- [Carts API](/.doc/carts-api.md)
-- [Users API](/.doc/users-api.md)
-- [Auth API](/.doc/auth-api.md)
--->
+### IoC
+- **Service Registration**
+- Isolamento da injeção de dependências
 
-## Project Structure
-This section describes the overall structure and organization of the project files and directories. 
+---
 
-See [Project Structure](/.doc/project-structure.md)
+## ✍️ Convenções e Nomeclaturas
+
+| Tipo          | Sufixo     | Exemplo                        |
+|---------------|------------|--------------------------------|
+| Command       | `Command`  | `CreateSaleCommand`            |
+| Query         | `Query`    | `GetSaleByIdQuery`             |
+| Handler       | `Handler`  | `CreateSaleCommandHandler`     |
+| DTO           | `Request`, `Response` | `SaleRequest`, `SaleResponse` |
+| Middleware    | `Middleware` | `ValidationExceptionMiddleware` |
+
+---
+
+## 🧪 Testes
+
+✅ Priorizados **testes unitários**, devido ao tempo limitado.
+
+- Testes para `Application` (handlers, validações)
+- Testes para `Common` (healthcheck, responses)
+
+🔜 Testes de integração e controllers podem ser adicionados facilmente.
+
+---
+
+## ✅ Conclusão
+
+Esse projeto demonstra:
+- Arquitetura DDD limpa
+- Separação clara de responsabilidades
+- Validações robustas com cobertura de testes
+- API estruturada e documentada
+
+📁 Estrutura preparada para escalar, integrar eventos e publicar em brokers no futuro.
+
+---
+
+> Desenvolvido por [Vinicius Oliveira](https://github.com/vinialexandre) • `backend/` contém o projeto principal
+
+Se quiser, posso já salvar esse novo conteúdo no `README.md`. Deseja?
