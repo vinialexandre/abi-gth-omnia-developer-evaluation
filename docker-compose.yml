@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   abi.developerevaluation.webapi:
     container_name: abi_developer_evaluation_webapi
@@ -9,7 +7,7 @@ services:
       dockerfile: src/Abi.DeveloperEvaluation.WebApi/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:5000
+      - ASPNETCORE_URLS=http://+:5000
     ports:
       - "5000:5000"
     volumes:
@@ -27,22 +25,3 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
-
-  abi.developerevaluation.nosql:
-    container_name: abi_developer_evaluation_nosql 
-    image: mongo:8.0    
-    environment:
-        MONGO_INITDB_ROOT_USERNAME: developer
-        MONGO_INITDB_ROOT_PASSWORD: ev@luAt10n
-    ports:
-      - "27017"
-
-  abi.developerevaluation.cache:
-    container_name: abi_developer_evaluation_cache 
-    image: redis:7.4.1-alpine     
-    command: redis-server --requirepass ev@luAt10n
-    environment:
-       MONGO_INITDB_ROOT_USERNAME: developer
-       MONGO_INITDB_ROOT_PASSWORD: ev@luAt10n
-    ports:
-       - "6379"

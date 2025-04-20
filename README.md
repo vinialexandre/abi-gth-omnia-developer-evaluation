@@ -76,6 +76,16 @@ Para testar a API rapidamente:
 ### IoC
 - Injeção de dependência isolada
 
+
+### Estrutura de pastas
+1. Presentation     → Camada de entrada (Controllers, DTOs HTTP, Swagger)
+2. Application      → Casos de uso (Handlers, Commands, Queries, Validators)
+3. Domain           → Núcleo de regras (Entities, Aggregates, ValueObjects, Interfaces)
+4. Crosscutting     → IoC, Helpers, Extensions, Middlewares
+5. Infra            → Repositórios, serviços externos, DB
+6. Tests            → Testes unitários e integração
+
+
 ---
 
 > Desenvolvido por [Vinicius Oliveira](https://github.com/vinialexandre)

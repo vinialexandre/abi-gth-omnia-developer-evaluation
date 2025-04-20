@@ -1,7 +1,6 @@
 using Abi.DeveloperEvaluation.Application;
 using Abi.DeveloperEvaluation.Common.HealthChecks;
 using Abi.DeveloperEvaluation.Common.Logging;
-using Abi.DeveloperEvaluation.Common.Security;
 using Abi.DeveloperEvaluation.Common.Validation;
 using Abi.DeveloperEvaluation.IoC;
 using Abi.DeveloperEvaluation.Infra;
@@ -33,8 +32,6 @@ public class Program
                     b => b.MigrationsAssembly("Abi.DeveloperEvaluation.Infra")
                 )
             );
-
-            builder.Services.AddJwtAuthentication(builder.Configuration);
 
             builder.RegisterDependencies();
 
@@ -72,8 +69,6 @@ public class Program
             var loggerFactory = app.Services.GetRequiredService<ILoggerFactory>();
             var logger = loggerFactory.CreateLogger("Migration");
             MigrationInitializer.ApplyMigrations(app.Services, logger);
-
-            builder.WebHost.UseUrls("https://+:5000");
 
             app.UseDefaultLogging();
 
