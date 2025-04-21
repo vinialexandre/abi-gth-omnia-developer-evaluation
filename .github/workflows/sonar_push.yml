@@ -1,0 +1,90 @@
+name: abi-gth-omnia-developer-evaluation
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    name: Run SonarCloud Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'microsoft'
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Install Sonar Scanner
+        shell: bash
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: Install dotCover
+        shell: bash
+        env:
+          DOT_COVER_VERSION: 2024.2.3
+        run: |
+          dotnet tool install --global JetBrains.dotCover.CommandLineTools --version $DOT_COVER_VERSION
+
+      - name: Begin SonarCloud Analysis
+        shell: bash
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
+          SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+          COVERAGE_REPORTS_DIR: ${{ github.workspace }}/reports
+          QUALITY_GATE_WAIT: true
+        run: |
+          dotnet-sonarscanner begin \
+          /k:"$SONAR_PROJECT_KEY" \
+          /o:"$SONAR_ORGANIZATION" \
+          /d:sonar.branch.name="$BRANCH_NAME" \
+          /d:sonar.token="$SONAR_TOKEN" \
+          /d:sonar.host.url="$SONAR_HOST_URL" \
+          /d:sonar.qualitygate.wait=$QUALITY_GATE_WAIT \
+          /d:sonar.cs.dotcover.reportsPaths="$COVERAGE_REPORTS_DIR/*.dotcover.html" \
+          /d:sonar.scanner.scanAll=false \
+          /d:sonar.exclusions="$COVERAGE_REPORTS_DIR/**,**/*.css,**/*.html,**/*.js,**/Program.cs,**/Migrations/*"
+
+      - name: .NET Restore
+        shell: bash
+        run: dotnet restore
+
+      - name: .NET Build
+        shell: bash
+        run: dotnet build --no-restore --configuration Release
+
+      - name: .NET Test
+        shell: bash
+        env:
+          COVERAGE_REPORTS_DIR: ${{ github.workspace }}/reports
+        run: |
+          dotnet dotCover cover-dotnet \
+            --ReportType=HTML \
+            --Output="$COVERAGE_REPORTS_DIR/coverage.dotcover.html" \
+            --Filters="-:module=*Tests;+:class=Abi.DeveloperEvaluation.*" -- \
+          test \
+            --no-restore \
+            --no-build \
+            Abi.DeveloperEvaluation.sln \
+            --logger "GitHubActions;report-warnings=false" \
+            --configuration Release \
+            --verbosity m
+
+      - name: End SonarCloud Analysis
+        shell: bash
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: dotnet-sonarscanner end /d:sonar.token="$SONAR_TOKEN"
