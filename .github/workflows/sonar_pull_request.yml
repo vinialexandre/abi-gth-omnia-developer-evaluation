@@ -70,6 +70,10 @@ jobs:
         shell: bash
         run: dotnet build Abi.DeveloperEvaluation.sln --no-restore --configuration Release
 
+      - name: Docker compose UP
+        shell: bash
+        run: docker compose -f .\docker-compose.yml up -d
+
       - name: .NET Test
         shell: bash
         env:
