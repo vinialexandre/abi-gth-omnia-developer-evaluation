@@ -1,6 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using Abi.DeveloperEvaluation.Common.Validation;
 
+namespace Abi.DeveloperEvaluation.Application.Dtos;
 public class ApiResponse
 {
     public bool Success { get; set; }

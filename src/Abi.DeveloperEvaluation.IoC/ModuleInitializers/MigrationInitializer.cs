@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+namespace Abi.DeveloperEvaluation.IoC.ModuleInitializers;
 public static class MigrationInitializer
 {
     public static void ApplyMigrations(IServiceProvider serviceProvider, ILogger logger, bool isTest = false)
