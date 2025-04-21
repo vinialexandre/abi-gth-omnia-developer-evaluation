@@ -1,5 +1,11 @@
 # Developer Evaluation - Sales API
 
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=vinialexandre_abi-gth-omnia-developer-evaluation&metric=coverage)](https://sonarcloud.io/summary/new_code?id=vinialexandre_abi-gth-omnia-developer-evaluation)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=vinialexandre_abi-gth-omnia-developer-evaluation&metric=bugs)](https://sonarcloud.io/summary/new_code?id=vinialexandre_abi-gth-omnia-developer-evaluation)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=vinialexandre_abi-gth-omnia-developer-evaluation&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=vinialexandre_abi-gth-omnia-developer-evaluation)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=vinialexandre_abi-gth-omnia-developer-evaluation&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=vinialexandre_abi-gth-omnia-developer-evaluation)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=vinialexandre_abi-gth-omnia-developer-evaluation&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=vinialexandre_abi-gth-omnia-developer-evaluation)
+
 API construída para resolver o desafio técnico proposto em [`README_DESAFIO.md`](https://github.com/vinialexandre/abi-gth-omnia-developer-evaluation/blob/main/README_DESAFIO.md), utilizando boas práticas como DDD, Clean Architecture, CQRS, e testes unitários.
 
 ---
