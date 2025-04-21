@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Abi.DeveloperEvaluation.Tests.Setup;
 using Moq;
+using Abi.DeveloperEvaluation.IoC.ModuleInitializers;
 
 namespace Abi.DeveloperEvaluation.Tests.IntegrationTests.IoC;
 

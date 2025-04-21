@@ -1,4 +1,5 @@
 ﻿using Abi.DeveloperEvaluation.Application.Dtos;
+using Abi.DeveloperEvaluation.Domain.Exceptions;
 using System.Text.Json;
 
 namespace Abi.DeveloperEvaluation.WebApi.Middleware

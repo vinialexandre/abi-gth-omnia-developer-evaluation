@@ -7,6 +7,7 @@ using Abi.DeveloperEvaluation.Application.Dtos;
 using Abi.DeveloperEvaluation.Application.Sales.Commands;
 using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Domain.Enums;
+using Abi.DeveloperEvaluation.Domain.Exceptions;
 using Abi.DeveloperEvaluation.Domain.Repositories;
 using AutoMapper;
 using MediatR;

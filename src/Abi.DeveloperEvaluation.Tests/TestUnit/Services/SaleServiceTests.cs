@@ -5,6 +5,7 @@ using Abi.DeveloperEvaluation.Application.Sales;
 using Abi.DeveloperEvaluation.Domain.Repositories;
 using Abi.DeveloperEvaluation.Domain.Enums;
 using Abi.DeveloperEvaluation.Domain.DomainValidation;
+using Abi.DeveloperEvaluation.Domain.Exceptions;
 
 namespace Abi.DeveloperEvaluation.Tests.TestUnit.Services;
 

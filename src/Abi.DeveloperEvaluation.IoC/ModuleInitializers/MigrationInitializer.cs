@@ -16,18 +16,7 @@ public static class MigrationInitializer
 
         try
         {
-            if (isTest)
-            {
-                if (db.Database.ProviderName == "Microsoft.EntityFrameworkCore.InMemory")
-                    db.Database.EnsureCreated();
-                else
-                    logger.LogWarning("Modo teste ativo, mas provider não é InMemory.");
-            }
-            else
-            {
-                db.Database.Migrate();
-            }
-
+            db.Database.Migrate();
             logger.LogInformation("Migração concluída com sucesso.");
         }
         catch (Exception ex)
@@ -36,4 +25,5 @@ public static class MigrationInitializer
             throw;
         }
     }
+
 }

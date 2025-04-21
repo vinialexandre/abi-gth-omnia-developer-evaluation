@@ -6,6 +6,7 @@ using Abi.DeveloperEvaluation.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Abi.DeveloperEvaluation.Domain.Exceptions;
 
 namespace Abi.DeveloperEvaluation.Tests.TestUnit.DomainEntities;
 

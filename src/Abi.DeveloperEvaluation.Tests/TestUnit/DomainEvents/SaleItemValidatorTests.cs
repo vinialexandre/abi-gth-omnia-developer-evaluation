@@ -1,6 +1,7 @@
 ﻿using Xunit;
 using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Domain.DomainValidation;
+using Abi.DeveloperEvaluation.Domain.Exceptions;
 
 namespace Abi.DeveloperEvaluation.Tests.TestUnit.DomainEvents;
 

@@ -10,6 +10,20 @@ namespace Abi.DeveloperEvaluation.Tests.Setup;
 
 public class WebApiTestFactory : WebApplicationFactory<Program>
 {
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
+    {
+        builder.ConfigureAppConfiguration((context, configBuilder) =>
+        {
+            var configuration = new ConfigurationBuilder()
+                .AddInMemoryCollection(new Dictionary<string, string?>
+                {
+                    ["ConnectionStrings:DefaultConnection"] = "Host=localhost;Port=5432;Database=developer_evaluation;Username=developer;Password=ev@luAt10n"
+                })
+                .Build();
+
+            configBuilder.AddConfiguration(configuration);
+        });
+    }
     public async Task MigrateDatabaseAsync()
     {
         using var scope = Services.CreateScope();

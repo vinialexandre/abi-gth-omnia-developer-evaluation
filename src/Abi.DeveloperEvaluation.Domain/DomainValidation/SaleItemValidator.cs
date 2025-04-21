@@ -1,4 +1,5 @@
 ﻿using Abi.DeveloperEvaluation.Domain.Entities;
+using Abi.DeveloperEvaluation.Domain.Exceptions;
 
 namespace Abi.DeveloperEvaluation.Domain.DomainValidation
 

@@ -1,6 +1,7 @@
 ﻿using Abi.DeveloperEvaluation.Domain.Common;
 using Abi.DeveloperEvaluation.Domain.Enums;
 using Abi.DeveloperEvaluation.Domain.Events;
+using Abi.DeveloperEvaluation.Domain.Exceptions;
 
 namespace Abi.DeveloperEvaluation.Domain.Entities
 {

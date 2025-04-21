@@ -3,6 +3,7 @@ using Abi.DeveloperEvaluation.Domain.Repositories;
 using Abi.DeveloperEvaluation.Domain.DomainValidation;
 using Abi.DeveloperEvaluation.Application.Dtos;
 using Abi.DeveloperEvaluation.Application.Services;
+using Abi.DeveloperEvaluation.Domain.Exceptions;
 
 namespace Abi.DeveloperEvaluation.Application.Sales
 {

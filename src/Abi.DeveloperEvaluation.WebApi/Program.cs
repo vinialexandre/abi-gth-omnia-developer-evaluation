@@ -8,6 +8,7 @@ using Abi.DeveloperEvaluation.WebApi.Middleware;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Abi.DeveloperEvaluation.IoC.ModuleInitializers;
 
 namespace Abi.DeveloperEvaluation.WebApi;
 
