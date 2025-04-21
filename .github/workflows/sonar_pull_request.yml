@@ -64,11 +64,11 @@ jobs:
 
       - name: .NET Restore
         shell: bash
-        run: dotnet restore
+        run: dotnet restore Abi.DeveloperEvaluation.sln
 
       - name: .NET Build
         shell: bash
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build Abi.DeveloperEvaluation.sln --no-restore --configuration Release
 
       - name: .NET Test
         shell: bash
