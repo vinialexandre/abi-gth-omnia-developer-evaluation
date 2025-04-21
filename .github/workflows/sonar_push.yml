@@ -68,7 +68,7 @@ jobs:
 
       - name: Docker compose UP
         shell: bash
-        run: docker compose -f .\docker-compose.yml up -d
+        run: docker compose -f docker-compose.yml up -d
 
       - name: .NET Test
         shell: bash
