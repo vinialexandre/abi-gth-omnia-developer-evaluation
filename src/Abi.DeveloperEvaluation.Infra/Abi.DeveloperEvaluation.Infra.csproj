@@ -4,7 +4,6 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>Vendor-Test-Gen-0001</Title>
-        <GeneratedMSBuildEditorConfigFile>$(IntermediateOutputPath)$(MSBuildProjectName).GeneratedMSBuildEditorConfig.editorconfig</GeneratedMSBuildEditorConfigFile>
 	</PropertyGroup>
 	<ItemGroup>
 	  <None Remove="Abi.DeveloperEvaluation.Infra.GeneratedMSBuildEditorConfig.editorconfig" />

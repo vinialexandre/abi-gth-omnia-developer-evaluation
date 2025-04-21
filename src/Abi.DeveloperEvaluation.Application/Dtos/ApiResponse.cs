@@ -7,7 +7,7 @@ public class ApiResponse
     public string Message { get; set; } = string.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public IEnumerable<ValidationErrorDetail>? Errors { get; set; }
+    public IEnumerable<ValidationErrorDetail>? Errors { get; set; } = [];
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public object? Data { get; set; }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Abi.DeveloperEvaluation.Application.Dtos;
 using Abi.DeveloperEvaluation.Application.Sales.Commands;
 using Abi.DeveloperEvaluation.Domain.Entities;
+using Abi.DeveloperEvaluation.Domain.Enums;
 using Abi.DeveloperEvaluation.Domain.Repositories;
 using AutoMapper;
 using MediatR;
@@ -30,6 +31,12 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, SaleResponse
     public async Task<SaleResponse> Handle(CreateSaleCommand request, CancellationToken ct)
     {
         _logger.LogInformation("Start - Creating sale for customer {CustomerId}", request.Request.CustomerId);
+
+        if (string.IsNullOrWhiteSpace(request.Request.SaleNumber))
+            throw new DomainException("Número da venda é obrigatório.");
+
+        if (!request.Request.Items.Any())
+            throw new DomainException("Venda deve conter ao menos um item.");
 
         var sale = _mapper.Map<Sale>(request.Request);
         _logger.LogDebug("Mapped sale: {@Sale}", sale);

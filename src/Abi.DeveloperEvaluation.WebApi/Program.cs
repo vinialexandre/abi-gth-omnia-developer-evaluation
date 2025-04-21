@@ -15,72 +15,65 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        try
+        var app = CreateApp(args);
+        app.Run();
+    }
+
+    public static WebApplication CreateApp(string[]? args = null)
+    {
+        var builder = WebApplication.CreateBuilder(args ?? []);
+
+        builder.AddDefaultLogging();
+
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+        builder.AddBasicHealthChecks();
+        builder.Services.AddSwaggerGen();
+
+        builder.Services.AddDbContext<DefaultContext>(options =>
+            options.UseNpgsql(
+                builder.Configuration.GetConnectionString("DefaultConnection"),
+                b => b.MigrationsAssembly("Abi.DeveloperEvaluation.Infra")
+            )
+        );
+
+        builder.RegisterDependencies();
+        builder.Services.AddAutoMapper(typeof(Program).Assembly, typeof(ApplicationLayer).Assembly);
+        builder.Services.AddMediatR(cfg =>
         {
-            WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
-            builder.AddDefaultLogging();
-
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-
-            builder.AddBasicHealthChecks();
-            builder.Services.AddSwaggerGen();
-
-            builder.Services.AddDbContext<DefaultContext>(options =>
-                options.UseNpgsql(
-                    builder.Configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly("Abi.DeveloperEvaluation.Infra")
-                )
+            cfg.RegisterServicesFromAssemblies(
+                typeof(ApplicationLayer).Assembly,
+                typeof(Program).Assembly
             );
+        });
+        builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
-            builder.RegisterDependencies();
+        var app = builder.Build();
 
-            builder.Services.AddAutoMapper(typeof(Program).Assembly, typeof(ApplicationLayer).Assembly);
+        app.UseMiddleware<DomainExceptionMiddleware>();
+        app.UseMiddleware<ValidationExceptionMiddleware>();
 
-            builder.Services.AddMediatR(cfg =>
-            {
-                cfg.RegisterServicesFromAssemblies(
-                    typeof(ApplicationLayer).Assembly,
-                    typeof(Program).Assembly
-                );
-            });
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
 
-            builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        app.UseHttpsRedirection();
+        app.UseAuthentication();
+        app.UseAuthorization();
+        app.UseBasicHealthChecks();
+        app.MapControllers();
 
-            var app = builder.Build();
-            app.UseMiddleware<DomainExceptionMiddleware>();
-            app.UseMiddleware<ValidationExceptionMiddleware>();
+        var loggerFactory = app.Services.GetRequiredService<ILoggerFactory>();
+        var logger = loggerFactory.CreateLogger("Migration");
 
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.UseBasicHealthChecks();
-
-            app.MapControllers();
-
-            var loggerFactory = app.Services.GetRequiredService<ILoggerFactory>();
-            var logger = loggerFactory.CreateLogger("Migration");
+        if (app.Environment.IsDevelopment())
+        {
             MigrationInitializer.ApplyMigrations(app.Services, logger);
+        }
 
-            app.UseDefaultLogging();
-
-            app.Run();
-        }
-        catch (Exception ex)
-        {
-            Log.Fatal(ex, "Application terminated unexpectedly");
-        }
-        finally
-        {
-            Log.CloseAndFlush();
-        }
+        app.UseDefaultLogging();
+        return app;
     }
 }

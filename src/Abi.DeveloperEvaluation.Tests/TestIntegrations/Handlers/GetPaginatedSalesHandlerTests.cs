@@ -1,51 +1,86 @@
-﻿using Xunit;
-using Moq;
-using AutoMapper;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Diagnostics;
+using Xunit;
+using Microsoft.Extensions.DependencyInjection;
+using Abi.DeveloperEvaluation.Domain.Entities;
 using Abi.DeveloperEvaluation.Application.Sales.Handlers;
 using Abi.DeveloperEvaluation.Application.Sales.Queries;
 using Abi.DeveloperEvaluation.Application.Dtos;
-using Abi.DeveloperEvaluation.Domain.Repositories;
-using Abi.DeveloperEvaluation.Domain.Entities;
+using Abi.DeveloperEvaluation.Infra.Repositories;
+using Abi.DeveloperEvaluation.Tests.Setup;
+using AutoMapper;
 using Microsoft.Extensions.Logging;
-using Abi.DeveloperEvaluation.Tests.IntegrationTests.Utils;
+using Abi.DeveloperEvaluation.Infra;
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
+using MediatR;
 
 namespace Abi.DeveloperEvaluation.Tests.IntegrationTests.Handlers;
 
-public class GetPaginatedSalesHandlerTests
+public class GetPaginatedSalesHandlerTests : IClassFixture<WebApiTestFactory>, IAsyncLifetime
 {
-    [Fact]
-    public async Task Handle_ShouldReturnPaginatedList_WithMappedItems()
-    {
-        var options = new DbContextOptionsBuilder<FakeContext>()
-            .UseInMemoryDatabase(databaseName: "SalesDb")
-            .Options;
+    private readonly IMapper _mapper;
+    private readonly ILogger<GetPaginatedSalesHandler> _logger;
+    private WebApiTestFactory _factory;
 
-        using var context = new FakeContext(options);
-        var sale = new Sale { Id = Guid.NewGuid() };
-        context.Sales.Add(sale);
+    public GetPaginatedSalesHandlerTests(WebApiTestFactory factory)
+    {
+        _factory = factory;
+    }
+
+    public async Task InitializeAsync()
+    {
+        await _factory.ResetDatabaseAsync();
+
+        await _factory.MigrateDatabaseAsync();
+    }
+
+    public Task DisposeAsync()
+    {
+        return Task.CompletedTask;
+    }
+
+    [Fact]
+    public async Task Handle_DeveRetornarListaPaginadaComMapeamentoCorreto()
+    {
+        using var scope = _factory.Services.CreateScope();
+
+        var context = scope.ServiceProvider.GetRequiredService<DefaultContext>();
+        var handler = scope.ServiceProvider.GetRequiredService<IRequestHandler<GetPaginatedSalesQuery, PaginatedList<SaleResponse>>>();
+
+        var sale1 = new Sale
+        {
+            Id = Guid.NewGuid(),
+            SaleNumber = "S001",
+            SaleDate = DateTime.UtcNow,
+            CustomerId = Guid.NewGuid(),
+            CustomerName = "Cliente A",
+            BranchId = Guid.NewGuid(),
+            Items = []
+        };
+
+        var sale2 = new Sale
+        {
+            Id = Guid.NewGuid(),
+            SaleNumber = "S002",
+            SaleDate = DateTime.UtcNow,
+            CustomerId = Guid.NewGuid(),
+            CustomerName = "Cliente B",
+            BranchId = Guid.NewGuid(),
+            Items = []
+        };
+
+        context.Sales.AddRange(sale1, sale2);
         await context.SaveChangesAsync();
 
-        var mockRepo = new Mock<ISaleRepository>();
-        mockRepo.Setup(r => r.GetQueryableAsync()).ReturnsAsync(context.Sales.AsQueryable());
-
-        var mockMapper = new Mock<IMapper>();
-        mockMapper.Setup(m => m.Map<List<SaleResponse>>(It.IsAny<List<Sale>>()))
-                  .Returns(new List<SaleResponse> { new SaleResponse() });
-
-        var mockLogger = new Mock<ILogger<GetPaginatedSalesHandler>>();
-
-        var handler = new GetPaginatedSalesHandler(mockRepo.Object, mockMapper.Object, mockLogger.Object);
-        var query = new GetPaginatedSalesQuery(1, 10);
+        var query = new GetPaginatedSalesQuery(Page: 1, Size: 10);
 
         var result = await handler.Handle(query, CancellationToken.None);
 
         Assert.NotNull(result);
-        Assert.Single(result);
+        Assert.Equal(2, result.TotalCount);
         Assert.Equal(1, result.CurrentPage);
         Assert.Equal(1, result.TotalPages);
+        Assert.Equal(2, result.Count());
     }
+   
 }

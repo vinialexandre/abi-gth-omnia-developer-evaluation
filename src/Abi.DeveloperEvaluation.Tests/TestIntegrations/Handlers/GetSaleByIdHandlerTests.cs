@@ -1,50 +1,72 @@
 ﻿using Xunit;
-using Moq;
-using AutoMapper;
-using System.Threading;
-using System.Threading.Tasks;
-using System;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Abi.DeveloperEvaluation.Application.Sales.Handlers;
 using Abi.DeveloperEvaluation.Application.Sales.Queries;
-using Abi.DeveloperEvaluation.Domain.Repositories;
 using Abi.DeveloperEvaluation.Domain.Entities;
-using Abi.DeveloperEvaluation.Application.Dtos;
-using Abi.DeveloperEvaluation.Tests.IntegrationTests.Utils;
+using Abi.DeveloperEvaluation.Tests.Setup;
+using AutoMapper;
 using Microsoft.Extensions.Logging;
+using Abi.DeveloperEvaluation.Infra;
+using Microsoft.EntityFrameworkCore;
+using Abi.DeveloperEvaluation.Infra.Repositories;
 
 namespace Abi.DeveloperEvaluation.Tests.IntegrationTests.Handlers;
 
-public class GetSaleByIdHandlerTests
+public class GetSaleByIdHandlerTests : IClassFixture<WebApiTestFactory>, IAsyncLifetime
 {
-    [Fact]
-    public async Task Handle_ShouldReturnMappedSale_WhenFound()
+    private readonly IServiceScope _scope;
+    private readonly DefaultContext _context;
+    private readonly IMapper _mapper;
+    private readonly ILogger<GetSaleByIdHandler> _logger;
+    private readonly string _connectionString;
+
+    public GetSaleByIdHandlerTests(WebApiTestFactory factory)
     {
-        var saleId = Guid.NewGuid();
-        var sale = new Sale { Id = saleId };
+        _scope = factory.Services.CreateScope();
+        _context = _scope.ServiceProvider.GetRequiredService<DefaultContext>();
+        _mapper = _scope.ServiceProvider.GetRequiredService<IMapper>();
+        _logger = _scope.ServiceProvider.GetRequiredService<ILogger<GetSaleByIdHandler>>();
+        _connectionString = _context.Database.GetConnectionString();
+    }
 
-        var options = new DbContextOptionsBuilder<FakeContext>()
-            .UseInMemoryDatabase("SaleByIdDb")
-            .Options;
+    public async Task InitializeAsync()
+    {
+        await _context.Database.MigrateAsync(); 
+        await DatabaseCleaner.ResetDatabaseAsync(_connectionString); 
+    }
 
-        using var context = new FakeContext(options);
-        context.Sales.Add(sale);
-        await context.SaveChangesAsync();
+    public Task DisposeAsync()
+    {
+        _scope.Dispose();
+        return Task.CompletedTask;
+    }
 
-        var mockRepo = new Mock<ISaleRepository>();
-        mockRepo.Setup(r => r.Query()).Returns(context.Sales.AsQueryable());
+    [Fact]
+    public async Task Handle_DeveRetornarVendaMapeada_QuandoEncontrada()
+    {
+        // Arrange
+        var sale = new Sale
+        {
+            Id = Guid.NewGuid(),
+            SaleNumber = "S999",
+            SaleDate = DateTime.UtcNow,
+            CustomerId = Guid.NewGuid(),
+            CustomerName = "Teste",
+            BranchId = Guid.NewGuid(),
+            Items = []
+        };
 
-        var mockMapper = new Mock<IMapper>();
-        mockMapper.Setup(m => m.Map<SaleResponse>(It.IsAny<Sale>()))
-                  .Returns(new SaleResponse { Id = sale.Id });
+        _context.Sales.Add(sale);
+        await _context.SaveChangesAsync();
 
-        var mockLogger = new Mock<ILogger<GetSaleByIdHandler>>();
+        var handler = new GetSaleByIdHandler(new SaleRepository(_context), _mapper, _logger);
 
-        var handler = new GetSaleByIdHandler(mockRepo.Object, mockMapper.Object, mockLogger.Object);
+        // Act
+        var result = await handler.Handle(new GetSaleByIdQuery(sale.Id), CancellationToken.None);
 
-        var result = await handler.Handle(new GetSaleByIdQuery(saleId), CancellationToken.None);
-
+        // Assert
         Assert.NotNull(result);
-        Assert.Equal(saleId, result.Id);
+        Assert.Equal(sale.Id, result.Id);
+        Assert.Equal(sale.SaleNumber, result.SaleNumber);
     }
 }

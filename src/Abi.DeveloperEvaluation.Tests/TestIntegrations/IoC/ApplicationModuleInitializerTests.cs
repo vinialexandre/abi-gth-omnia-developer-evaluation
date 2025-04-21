@@ -1,35 +1,33 @@
 ﻿using Xunit;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Abi.DeveloperEvaluation.IoC.ModuleInitializers;
 using Abi.DeveloperEvaluation.Domain.Repositories;
 using Abi.DeveloperEvaluation.Domain.DomainValidation;
 using Abi.DeveloperEvaluation.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-using Abi.DeveloperEvaluation.Tests.IntegrationTests.Utils;
+using Abi.DeveloperEvaluation.Tests.Setup;
 
 namespace Abi.DeveloperEvaluation.Tests.IntegrationTests.IoC;
 
-public class ApplicationModuleInitializerTests
+public class ApplicationModuleInitializerTests : IClassFixture<WebApiTestFactory>
 {
-    [Fact]
-    public void Should_Register_Validators_And_UnitOfWork()
+    private readonly IServiceProvider _provider;
+
+    public ApplicationModuleInitializerTests(WebApiTestFactory factory)
     {
-        var builder = WebApplication.CreateBuilder();
+        _provider = factory.Services.CreateScope().ServiceProvider;
+    }
 
-        var dbContextOptions = new DbContextOptionsBuilder<FakeContext>()
-            .UseInMemoryDatabase("TestDb")
-            .Options;
+    [Fact]
+    public void DeveResolverValidadoresEUnitOfWork()
+    {
+        // Act
+        var validatorVenda = _provider.GetService<IValidator<Sale>>();
+        var validatorItem = _provider.GetService<IValidator<SaleItem>>();
+        var unitOfWork = _provider.GetService<IUnitOfWork>();
 
-        builder.Services.AddSingleton<DbContext>(new FakeContext(dbContextOptions));
-
-        var initializer = new ApplicationModuleInitializer();
-        initializer.Initialize(builder);
-
-        var provider = builder.Services.BuildServiceProvider();
-
-        Assert.NotNull(provider.GetService<IValidator<Sale>>());
-        Assert.NotNull(provider.GetService<IValidator<SaleItem>>());
-        Assert.NotNull(provider.GetService<IUnitOfWork>());
+        // Assert
+        Assert.NotNull(validatorVenda);
+        Assert.NotNull(validatorItem);
+        Assert.NotNull(unitOfWork);
     }
 }

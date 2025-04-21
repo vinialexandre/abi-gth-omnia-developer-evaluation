@@ -4,7 +4,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <GeneratedMSBuildEditorConfigFile>$(IntermediateOutputPath)$(MSBuildProjectName).GeneratedMSBuildEditorConfig.editorconfig</GeneratedMSBuildEditorConfigFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DisableImplicitStaticAssets>true</DisableImplicitStaticAssets>
     <UserSecretsId>3c58d567-b1d8-4a51-bd36-dbfddb84701b</UserSecretsId>
@@ -12,6 +11,8 @@
     <DockerfileContext>..\..</DockerfileContext>
     <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
     <DisableImplicitStaticWebAssets>true</DisableImplicitStaticWebAssets>
+	<PreserveCompilationContext>true</PreserveCompilationContext>
+	<GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,5 +39,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Abi.DeveloperEvaluation.IoC\Abi.DeveloperEvaluation.IoC.csproj" />
   </ItemGroup>
-
 </Project>
